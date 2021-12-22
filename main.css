@@ -16,7 +16,7 @@ body .container {
 }
 
 	body .container section {
-/*		outline: auto;*/
+		/*		outline: auto;*/
 		color: white;
 		display: flex;
 		width: 100%;
@@ -25,7 +25,13 @@ body .container {
 		overflow: hidden;
 		justify-content: center;
 		align-items: center;
+		background: radial-gradient(farthest-side at 50% -2%, #2855F470, transparent) 0vw 0 / 100vw 40vh no-repeat;
 	}
+
+		body .container section.gradient-background {
+			background: radial-gradient(at 98% 10%, #6417B3 0, transparent 47%), radial-gradient(at 88% 78%, #194CBD 0, transparent 52%), radial-gradient(at 56% 16%, #1E25A6 0, transparent 42%), radial-gradient(at 20% 21%, #9F10C9 0, transparent 52%), radial-gradient(at 40% 41%, #3D19BD 0, transparent 41%), radial-gradient(at 97% 58%, #7349FC 0, transparent 47%), radial-gradient(at 35% 12%, #1771B3 0, transparent 40%), radial-gradient(at 88% 93%, #10ADC9 0, transparent 52%);
+			background-color: #1E25A6;
+		}
 
 .grid-container {
 	width: 1366px;
@@ -112,29 +118,53 @@ h2 {
 }
 
 
-.link:hover {
-	animation: highlight 500ms;
+	.link:hover {
+		animation: highlight 500ms;
+	}
+
+	@keyframes highlight {
+		0% {
+			background-size: 0% .125rem;
+		}
+
+		100% {
+			background-size: 100% initial;
+		}
+	}
+
+	.link.left {
+		background-position: left bottom;
+	}
+
+	.link.right {
+		background-position: right bottom;
+	}
+
+h1.link {
+	width: fit-content;
+	font-size: 6rem;
+	line-height: 6.5rem;
+	padding-bottom: 1REM;
+	background-size: 100% 1REM;
 }
 
-@keyframes highlight {
+	h1.link:hover {
+		background-size: 100% 1rem;
+		animation: highlight-large 500ms;
+	}
+
+@keyframes highlight-large {
 	0% {
-		background-size: 0% .125REM;
+		background-size: 0% 1REM;
 	}
 
 	100% {
-		background-size: 100% .125REM;
+		background-size: 100% 1REM;
 	}
 }
 
-.link.left {
-	background-position: left bottom;
-}
-
-.link.right {
-	background-position: right bottom;
-}
-
 .gradient-btn {
+	width: fit-content;
 	color: white;
 	padding-right: 2rem;
 	padding-left: 2rem;
@@ -168,3 +198,31 @@ h2 {
 		box-shadow: 0 0 0.375rem 0 rgb(59 63 230 / 65%);
 		transform: translate(0, 0.375rem);
 	}
+
+@keyframes signature-passive {
+	0% {
+		transform: rotateX(-20deg) rotateY(32deg) rotateZ(3deg);
+	}
+
+	20% {
+		transform: rotateX(23deg) rotateY(-15deg) rotateZ(-20deg);
+	}
+
+	40% {
+		transform: rotateX(-15deg) rotateY(12deg) rotateZ(15deg);
+	}
+
+	60% {
+		transform: rotateX(15deg) rotateY(32deg) rotateZ(-35);
+	}
+
+	80% {
+		transform: rotateX(3deg) rotateY(-15deg) rotateZ(-12deg);
+	}
+}
+
+.signature {
+	animation: signature-passive 75s infinite;
+	transition: transform 15s ease;
+}
+
