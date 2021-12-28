@@ -1,6 +1,7 @@
 /* Basic Containers */
 
 body {
+	color: white;
 	font-family: Montserrat;
 	width: 100%;
 	height: 100vh;
@@ -8,48 +9,63 @@ body {
 	background-color: #171717;
 }
 
-body .container {
-	width: 100%;
-	height: 100%;
-	scroll-snap-type: y mandatory;
-	overflow-y: scroll;
-}
-
-	body .container section {
-		/*		outline: auto;*/
-		color: white;
-		display: flex;
+	body .container {
 		width: 100%;
-		height: 100vh;
-		scroll-snap-align: start;
-		overflow: hidden;
-		justify-content: center;
-		align-items: center;
-		background: radial-gradient(farthest-side at 50% -2%, #2855F470, transparent) 0vw 0 / 100vw 40vh no-repeat;
+		height: 100%;
+		scroll-snap-type: y mandatory;
+		position:relative;
+		perspective: 100px;
+		transform-style:preserve-3d;
+		overflow-y: scroll;
+		overflow-x: clip;
 	}
 
-		body .container section.gradient-background {
-			background: radial-gradient(at 98% 10%, #6417B3 0, transparent 47%), radial-gradient(at 88% 78%, #194CBD 0, transparent 52%), radial-gradient(at 56% 16%, #1E25A6 0, transparent 42%), radial-gradient(at 20% 21%, #9F10C9 0, transparent 52%), radial-gradient(at 40% 41%, #3D19BD 0, transparent 41%), radial-gradient(at 97% 58%, #7349FC 0, transparent 47%), radial-gradient(at 35% 12%, #1771B3 0, transparent 40%), radial-gradient(at 88% 93%, #10ADC9 0, transparent 52%);
-			background-color: #1E25A6;
+		body .container section {
+			/*		outline: auto;*/
+			color: white;
+			display: flex;
+			width: 100%;
+			height: 100vh;
+			scroll-snap-align: start;
+			overflow: hidden;
+			justify-content: center;
+			align-items: center;
+			background: radial-gradient(farthest-side at 50% -2%, #2855F470, transparent) 0vw 0 / 100vw 40vh no-repeat;
 		}
 
-			body .container section.gradient-background h1 {
-				text-transform: none;
-				font-weight: normal;
-				font-size: 4.5rem;
-				line-height: 5rem;
-				margin-bottom: 4rem;
-			}
+.parallax-wrap {
+	overflow: visible;
+}
+
+.container .gradient-background {
+	background: radial-gradient(at 98% 10%, #6417B3 0, transparent 47%), radial-gradient(at 88% 78%, #194CBD 0, transparent 52%), radial-gradient(at 56% 16%, #1E25A6 0, transparent 42%), radial-gradient(at 20% 21%, #9F10C9 0, transparent 52%), radial-gradient(at 40% 41%, #3D19BD 0, transparent 41%), radial-gradient(at 97% 58%, #7349FC 0, transparent 47%), radial-gradient(at 35% 12%, #1771B3 0, transparent 40%), radial-gradient(at 88% 93%, #10ADC9 0, transparent 52%);
+	background-color: #1E25A6;
+	background-attachment: fixed;
+	overflow: visible;
+}
+
+	.container .gradient-background h1 {
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 4.5rem;
+		line-height: 5rem;
+		margin-bottom: 4rem;
+	}
 
 .grid-container {
+	margin:auto;
 	width: 1366px;
 	height: 100vh;
 	display: grid;
 	align-items: center;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
-	overflow: clip;
 }
+
+	.grid-container * {
+		pointer-events: auto;
+	}
 
 .grid-item {
 	outline: auto;
@@ -66,12 +82,22 @@ h1 {
 	margin: 0 0 1rem 0;
 }
 
+h1.parallax {
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 4.5rem;
+	line-height: 5rem;
+	margin-bottom: 4rem;
+}
+
 h2 {
 	opacity: 0.7;
 }
 
 p {
-	line-height:2rem;
+	line-height: 2rem;
+	opacity: 0.7;
 }
 
 /* Sections */
@@ -85,12 +111,13 @@ p {
 	display: grid;
 	grid-template-rows: auto auto auto auto auto;
 }
+
 	.hero-title-block h2 {
 		align-self: flex-end;
 		grid-column: 4 / 7;
 		grid-row: 2 / 2;
 	}
-	
+
 	.hero-title-block h1 {
 		grid-column: 1 / 8;
 		grid-row: 3 / 3;
@@ -134,23 +161,23 @@ p {
 		animation: highlight 500ms;
 	}
 
-	@keyframes highlight {
-		0% {
-			background-size: 0% .125rem;
-		}
-
-		100% {
-			background-size: 100% initial;
-		}
+@keyframes highlight {
+	0% {
+		background-size: 0% .125rem;
 	}
 
-	.link.left {
-		background-position: left bottom;
+	100% {
+		background-size: 100% initial;
 	}
+}
 
-	.link.right {
-		background-position: right bottom;
-	}
+.link.left {
+	background-position: left bottom;
+}
+
+.link.right {
+	background-position: right bottom;
+}
 
 h1.link {
 	width: fit-content;
