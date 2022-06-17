@@ -23,7 +23,6 @@ body {
 	}
 
 		body .container section {
-			/*		outline: auto;*/
 			color: white;
 			display: flex;
 			width: 100%;
@@ -65,25 +64,10 @@ body {
 		margin-bottom: 4rem;
 	}
 
-
-
-
-/*.container .gradient-background {
-	background: radial-gradient(at 98% 10%, #6417B3 0, transparent 47%), radial-gradient(at 88% 78%, #194CBD 0, transparent 52%), radial-gradient(at 56% 16%, #1E25A6 0, transparent 42%), radial-gradient(at 20% 21%, #9F10C9 0, transparent 52%), radial-gradient(at 40% 41%, #3D19BD 0, transparent 41%), radial-gradient(at 97% 58%, #7349FC 0, transparent 47%), radial-gradient(at 35% 12%, #1771B3 0, transparent 40%), radial-gradient(at 88% 93%, #10ADC9 0, transparent 52%);
-	background-color: #1E25A6;
-	background-attachment: fixed;
-	overflow: visible;
-}*/
-/*
-	.container .gradient-background h1 {
-		color: white;
-		text-transform: uppercase;
-		font-weight: bold;
-		font-size: 4.5rem;
-		line-height: 5rem;
-		margin-bottom: 4rem;
+	.parallax-text p {
+		text-align:justify;
 	}
-*/
+
 .grid-container {
 	margin:auto;
 	width: 1366px;
@@ -125,7 +109,7 @@ h1.parallax {
 	font-weight: bold;
 	font-size: 4.5rem;
 	line-height: 5rem;
-	margin-bottom: 4rem;
+	margin-bottom: 0;
 }
 
 h2 {
@@ -256,9 +240,10 @@ p {
 	}
 
 	.card p {
+		color: white;
 		opacity: 0.9;
 		/*text-transform: uppercase;*/
-		font-weight:lighter;
+		font-weight:normal;
 		font-size: 1.5rem;
 		line-height: 1.85rem;
 		margin-top: 1ch;
@@ -330,87 +315,55 @@ p {
 
 	@keyframes frame_text {
 		0% {
+			filter: blur(0ch);
+			opacity: 1;
+			content: "The colorful background is dynamic and randomly generated!";
+		}
+
+		12.5% {
 			filter: blur(1ch);
 			opacity: 0;
-			width: 0;
-			content: "The colorful background is dynamic and randomly generated!";
+			content: "And yes, I designed and programmed this website from start to finish";
 		}
 
 		25% {
-			opacity: 0.7;
-			width: auto;
-			content: "And yes, I designed and programmed this website from start to finish";
-		}
-
-		30% {
-			opacity: 0.7;
-			content: "And yes, I designed and programmed this website from start to finish";
-			width: auto;
-		}
-		31% {
 			filter: blur(0ch);
-			width: auto;
-			content: "And yes, I designed and programmed this website from start to finish";
-			opacity: 0.7;
+			opacity: 1;
 		}
 
-		33% {
+		37.5% {
+			filter: blur(0ch);
+			opacity: 1;
+		}
+
+		50% {
 			filter: blur(1ch);
 			opacity: 0;
-			width: 0;
-			content: "And yes, I designed and programmed this website from start to finish";
-		}
-
-		58% {
-			opacity: 0;
-			width: 0;
-			filter: blur(1ch);
 			content: "↓ Keep scrolling";
 		}
 
-		63% {
+		62.5% {
 			filter: blur(0ch);
-			opacity: 0.7;
-			width: auto;
-			content: "↓ Keep scrolling";
+			opacity: 1;
 		}
 
-		64% {
-			filter: blur(0ch);
-			opacity: 0.7;
-			width: auto;
-			content: "↓ Keep scrolling";
-		}
-
-		66% {
+		75% {
 			filter: blur(1ch);
 			opacity: 0;
-			width: 0;
-			content: "↓ Keep scrolling";
-		}
-
-		91% {
 			content: "The colorful background is dynamic and randomly generated!";
-			filter: blur(1ch);
-			opacity: 0;
-			width: 0;
 		}
 
-		96% {
-			filter: blur(0ch);
-			opacity: 0.7;
-			width: auto;
+		87.5% {
+			filter: blur(1ch);
+			opacity: 0;
 			content: "The colorful background is dynamic and randomly generated!";
 		}
 
 		100% {
-			filter: blur(0ch);
-			opacity: 0.7;
-			width: auto;
+			filter: blur(1ch);
+			opacity: 0;
 			content: "The colorful background is dynamic and randomly generated!";
 		}
-
-
 	}
 
 /* UI Elements */
