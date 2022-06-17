@@ -1,4 +1,4 @@
-/* Basic Containers */
+﻿/* Basic Containers */
 
 body {
 	color: white;
@@ -13,11 +13,13 @@ body {
 		width: 100%;
 		height: 100%;
 		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
 		position:relative;
 		perspective: 100px;
 		transform-style:preserve-3d;
 		overflow-y: scroll;
 		overflow-x: clip;
+		transition-delay: 1s;
 	}
 
 		body .container section {
@@ -30,21 +32,31 @@ body {
 			overflow: hidden;
 			justify-content: center;
 			align-items: center;
-			background: radial-gradient(farthest-side at 50% -2%, #2855F470, transparent) 0vw 0 / 100vw 40vh no-repeat;
+			background-color: #171717;
+			background-position: 0vw 0 / 100vw 40vh;
+			background-repeat: no-repeat;
+			background-image: radial-gradient(farthest-side at 50% -2%, #2855F470, transparent);
 		}
+
+
+
+
+.parallax-text-block {
+	transform-style: preserve-3d;
+	/*pointer-events: fill;*/
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+}
+
 
 .parallax-wrap {
 	overflow: visible;
-}
-
-.container .gradient-background {
-	background: radial-gradient(at 98% 10%, #6417B3 0, transparent 47%), radial-gradient(at 88% 78%, #194CBD 0, transparent 52%), radial-gradient(at 56% 16%, #1E25A6 0, transparent 42%), radial-gradient(at 20% 21%, #9F10C9 0, transparent 52%), radial-gradient(at 40% 41%, #3D19BD 0, transparent 41%), radial-gradient(at 97% 58%, #7349FC 0, transparent 47%), radial-gradient(at 35% 12%, #1771B3 0, transparent 40%), radial-gradient(at 88% 93%, #10ADC9 0, transparent 52%);
-	background-color: #1E25A6;
 	background-attachment: fixed;
 	overflow: visible;
 }
 
-	.container .gradient-background h1 {
+	.parallax-wrap h1 {
 		color: white;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -53,6 +65,25 @@ body {
 		margin-bottom: 4rem;
 	}
 
+
+
+
+/*.container .gradient-background {
+	background: radial-gradient(at 98% 10%, #6417B3 0, transparent 47%), radial-gradient(at 88% 78%, #194CBD 0, transparent 52%), radial-gradient(at 56% 16%, #1E25A6 0, transparent 42%), radial-gradient(at 20% 21%, #9F10C9 0, transparent 52%), radial-gradient(at 40% 41%, #3D19BD 0, transparent 41%), radial-gradient(at 97% 58%, #7349FC 0, transparent 47%), radial-gradient(at 35% 12%, #1771B3 0, transparent 40%), radial-gradient(at 88% 93%, #10ADC9 0, transparent 52%);
+	background-color: #1E25A6;
+	background-attachment: fixed;
+	overflow: visible;
+}*/
+/*
+	.container .gradient-background h1 {
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 4.5rem;
+		line-height: 5rem;
+		margin-bottom: 4rem;
+	}
+*/
 .grid-container {
 	margin:auto;
 	width: 1366px;
@@ -67,11 +98,17 @@ body {
 		pointer-events: auto;
 	}
 
+	.grid-container header {
+		background-color: #161616;
+	}
+
 .grid-item {
 	outline: auto;
 	outline-width: thin;
 	outline-color: aqua;
 }
+
+/* Images */
 
 /* Text */
 h1 {
@@ -144,6 +181,237 @@ p {
 	grid-row: 1 / 6;
 	padding: 5vh 0 0 0;
 }
+
+.gradient-background {
+	z-index: -3;
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: #55CCDE;
+}
+
+.carousel-wrap {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+
+.carousel {
+	display: flex;/*
+	align-content: center;*/
+	height: 100%;
+	position: absolute;
+	inset: 0 auto 0 0;
+	left: 0px;
+	overflow: hidden;
+	/*transition: 10s all linear;*/
+	/*animation: carouse 20s linear infinite;*/
+}
+
+@keyframes carouse {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-50%)
+	}
+}
+
+
+.card {
+	align-items: start;
+	margin: auto;
+	height: 70vh;
+	width: 112vh;
+	min-width: 80ch;
+	min-height: 50ch;
+	grid-template: 1fr 1fr 1fr / 1fr 1fr 40ch;
+	display: grid;
+}
+
+	.card:hover {
+		cursor: pointer;
+	}
+
+	.card img {
+		width: 100%;
+		height: 100%;
+		min-width: 0;
+		min-height: 0;
+		object-fit: cover;
+		background-color: dimgrey
+	}
+
+	.card h1 {
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 2rem;
+		line-height: 2.25rem;
+		margin-bottom: 0.5ch;
+	}
+
+	.card p {
+		opacity: 0.9;
+		/*text-transform: uppercase;*/
+		font-weight:lighter;
+		font-size: 1.5rem;
+		line-height: 1.85rem;
+		margin-top: 1ch;
+		margin-bottom: 0;
+	}
+
+	
+
+.carousel-text-wrapper {
+	grid-area: 1 / 3 / 4 / 3;
+	padding: 0 1rem 0 1.5rem;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+/*	.card:nth-of-type(even) .carousel-text-wrapper {
+		justify-content: flex-end;
+	}*/
+
+
+
+.frame {
+	background: #171717;
+	position: absolute;
+	transition: 1s all ease-out;
+	overflow: clip;
+	/*z-index: 0;*/
+	/*position: -webkit-sticky;*/ /* Safari */
+	/*position: sticky;*/
+	/*top: 0;*/
+}
+	.frame:nth-of-type(1) {
+		inset: 0 100% 0 0;
+	}
+
+	.frame.active:nth-of-type(1) {
+		inset: 0 95% 0 0;
+	}
+
+	.frame:nth-of-type(2) {
+		inset: 0 0 100% 0;
+	}
+
+	.frame.active:nth-of-type(2) {
+		inset: 0 0 90% 0;
+	}
+
+	.frame:nth-of-type(3) {
+		inset: 0 0 0 100%;
+	}
+
+	.frame.active:nth-of-type(3) {
+		inset: 0 0 0 95%;
+	}
+	.frame:nth-of-type(4) {
+		inset: 100% 0 0 0;
+	}
+
+	.frame.active:nth-of-type(4) {
+		inset: 90% 0 0 0;
+	}
+
+	.frame p:before {
+		overflow: clip;
+		content: 'And yes, I designed and programmed this website from start to finish';
+		transition: none;
+		animation: frame_text 30s infinite;
+	}
+
+	@keyframes frame_text {
+		0% {
+			filter: blur(1ch);
+			opacity: 0;
+			width: 0;
+			content: "The colorful background is dynamic and randomly generated!";
+		}
+
+		25% {
+			opacity: 0.7;
+			width: auto;
+			content: "And yes, I designed and programmed this website from start to finish";
+		}
+
+		30% {
+			opacity: 0.7;
+			content: "And yes, I designed and programmed this website from start to finish";
+			width: auto;
+		}
+		31% {
+			filter: blur(0ch);
+			width: auto;
+			content: "And yes, I designed and programmed this website from start to finish";
+			opacity: 0.7;
+		}
+
+		33% {
+			filter: blur(1ch);
+			opacity: 0;
+			width: 0;
+			content: "And yes, I designed and programmed this website from start to finish";
+		}
+
+		58% {
+			opacity: 0;
+			width: 0;
+			filter: blur(1ch);
+			content: "↓ Keep scrolling";
+		}
+
+		63% {
+			filter: blur(0ch);
+			opacity: 0.7;
+			width: auto;
+			content: "↓ Keep scrolling";
+		}
+
+		64% {
+			filter: blur(0ch);
+			opacity: 0.7;
+			width: auto;
+			content: "↓ Keep scrolling";
+		}
+
+		66% {
+			filter: blur(1ch);
+			opacity: 0;
+			width: 0;
+			content: "↓ Keep scrolling";
+		}
+
+		91% {
+			content: "The colorful background is dynamic and randomly generated!";
+			filter: blur(1ch);
+			opacity: 0;
+			width: 0;
+		}
+
+		96% {
+			filter: blur(0ch);
+			opacity: 0.7;
+			width: auto;
+			content: "The colorful background is dynamic and randomly generated!";
+		}
+
+		100% {
+			filter: blur(0ch);
+			opacity: 0.7;
+			width: auto;
+			content: "The colorful background is dynamic and randomly generated!";
+		}
+
+
+	}
 
 /* UI Elements */
 
@@ -263,6 +531,7 @@ h1.link {
 .signature {
 	animation: signature-passive 75s infinite;
 	transition: transform 15s ease;
+	object-fit:contain;
 }
 
 .box-shadow {
