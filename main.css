@@ -1,22 +1,30 @@
 #mobile-alert {
+	visibility: hidden;
 	position: absolute;
-	inset: 5%;
-	background: #1b3079;
-	z-index: 10;
-	display: flex;
-	align-items: center;
 }
-	#mobile-alert div {
+
+@media (max-width: 599px) {
+	#mobile-alert {
 		position: absolute;
-		right: 0;
-		top: 0;
-		padding: 10pt;
+		inset: 5%;
+		background: #1b3079;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		visibility: visible;
 	}
 
-	#mobile-alert p {
-		margin: 0 10pt 0 10pt;
-	}
+		#mobile-alert div {
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding: 10pt;
+		}
 
+		#mobile-alert p {
+			margin: 0 10pt 0 10pt;
+		}
+}
 /* Basic Containers */
 
 body {
