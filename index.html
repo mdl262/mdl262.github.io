@@ -22,7 +22,7 @@
     <body>
 
         <div id="mobile-alert">
-            <div onclick="this.parentNode.style.visibility='hidden'"">𐌢</div>
+            <div onclick="this.parentNode.style.visibility='hidden'">𐌢</div>
             <p>Hello! I'm currently working on making this website mobile-friendly. Please view <u>max-dan-li.com</u> on your computer! </p>
         </div>
         <div class="frame"></div>
@@ -383,38 +383,41 @@
 
 
             // carousel animation
-            var scrolling = false;
-            var carousel_period = 80
-            document.getElementsByClassName("container")[0].addEventListener("scroll", function () {
-                scrolling = true;
-            });
+            if (window.innerWidth > 599) {
+                var scrolling = false;
+                var carousel_period = 10
+                document.getElementsByClassName("container")[0].addEventListener("scroll", function () {
+                    scrolling = true;
+                });
 
-            var carousel0 = document.querySelectorAll(".carousel")[0];
+                var carousel0 = document.querySelectorAll(".carousel")[0];
 
-            carousel0.style.left = (window.outerWidth - carousel0.getBoundingClientRect().width) + "px";
-            carousel0.style.right = "auto";
-            carousel0.style.transition = carousel_period + "s all linear";
-            carousel0.style.left = (-1 - carousel0.getBoundingClientRect().width) + "px";
-            
+                carousel0.style.left = (window.outerWidth - carousel0.getBoundingClientRect().width) + "px";
+                carousel0.style.right = "auto";
+                carousel0.style.transition = carousel_period + "s all linear";
+                carousel0.style.left = (-1 - carousel0.getBoundingClientRect().width) + "px";
 
-            function cardTextJustify() {
-                var debug = ""
-                card_texts = document.getElementsByClassName("carousel-text-wrapper")
-                if (card_texts[0].style.justifyContent == "") {
-                    card_texts[0].style.justifyContent = "flex-start";
-                }
-                for (i = 1; i < card_texts.length; i++) {
-                    if (card_texts[i - 1].style.justifyContent == "flex-start") {
-                        card_texts[i].style.justifyContent = "flex-end";
-                        debug += "end\n"
-                    } else if (card_texts[i - 1].style.justifyContent == "flex-end") {
-                        card_texts[i].style.justifyContent = "flex-start";
-                        debug += "start\n"
+
+                function cardTextJustify() {
+                    var debug = ""
+                    card_texts = document.querySelectorAll(".carousel-wrap .carousel-text-wrapper")
+                    if (card_texts[0].style.justifyContent == "") {
+                        card_texts[0].style.justifyContent = "flex-start";
+                    }
+                    for (i = 1; i < card_texts.length; i++) {
+                        if (card_texts[i - 1].style.justifyContent == "flex-start") {
+                            card_texts[i].style.justifyContent = "flex-end";
+                            debug += "end\n"
+                        } else if (card_texts[i - 1].style.justifyContent == "flex-end") {
+                            card_texts[i].style.justifyContent = "flex-start";
+                            debug += "start\n"
+                        }
                     }
                 }
+
+                cardTextJustify()
             }
 
-            cardTextJustify()
 
             function carousel() {
                 if (!scrolling) {
@@ -424,7 +427,7 @@
                     var carousels = document.querySelectorAll(".carousel");
 
                     // generate carousels responsively
-                    if (carousels[carousels.length - 1].getBoundingClientRect().right < window.innerWidth) {
+                    if (carousels[carousels.length - 1].getBoundingClientRect().right < window.outerWidth) {
                         clone = carousels[0].cloneNode(true);
 
                         //clone.style.left = carousels[carousels.length - 1].getBoundingClientRect().right + "px";
@@ -448,15 +451,15 @@
                     for (i = 0; i < carousels.length - 1; i++) {
                         if (carousels[i].getBoundingClientRect().right > carousels[i + 1].getBoundingClientRect().left) {
                             var carousel = carousels[i]
+                            
 
+                            carousel.style.left = (carousels[i + 1].getBoundingClientRect().left - carousels[i + 1].getBoundingClientRect().width - 10) + "px";
                             carousel.style.transition = "none";
-
-                            carousel.style.left = (carousels[i + 1].getBoundingClientRect().left - carousels[i + 1].getBoundingClientRect().width - 2) + "px";
-                            console.log("new")
+                            console.log(carousel.getBoundingClientRect().right)
                             carousel.style.right = "auto";
                             carousel.style.transition = carousel_period + "s all linear";
-                            carousel.style.left = (carousels[i + 1].getBoundingClientRect().left - 3 - 2 * carousels[i + 1].getBoundingClientRect().width) + "px";
-                            
+                            carousel.style.left = (carousels[i + 1].getBoundingClientRect().left - 11 - 2 * carousels[i + 1].getBoundingClientRect().width) + "px";
+
                         }
                     }
 
@@ -476,7 +479,6 @@
 
                 scrolling = false;
             }
-
 
             // frame animation
             function reveal() {
