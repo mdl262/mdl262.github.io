@@ -302,34 +302,34 @@ p {
 	/*position: sticky;*/
 	/*top: 0;*/
 }
-	.frame:nth-of-type(1) {
+	.frame:nth-of-type(2) {
 		inset: 0 100% 0 0;
 	}
 
-	.frame.active:nth-of-type(1) {
+	.frame.active:nth-of-type(2) {
 		inset: 0 95% 0 0;
 	}
 
-	.frame:nth-of-type(2) {
+	.frame:nth-of-type(3) {
 		inset: 0 0 100% 0;
 	}
 
-	.frame.active:nth-of-type(2) {
+	.frame.active:nth-of-type(3) {
 		inset: 0 0 90% 0;
 	}
 
-	.frame:nth-of-type(3) {
+	.frame:nth-of-type(4) {
 		inset: 0 0 0 100%;
 	}
 
-	.frame.active:nth-of-type(3) {
+	.frame.active:nth-of-type(4) {
 		inset: 0 0 0 95%;
 	}
-	.frame:nth-of-type(4) {
+	.frame:nth-of-type(5) {
 		inset: 100% 0 0 0;
 	}
 
-	.frame.active:nth-of-type(4) {
+	.frame.active:nth-of-type(5) {
 		inset: 90% 0 0 0;
 	}
 
