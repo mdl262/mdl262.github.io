@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H95WL2XTMP"></script>
@@ -18,13 +19,25 @@
     <link href="./icons/shortcuticon.png" rel="shortcut icon" type="image/x-icon">
     <title>Max Dan Li - Portfolio</title>
     <link rel="stylesheet" href="./main.css" type="text/css">
+    <!--import flickity for mobile carousels-->
+    <link rel="stylesheet" href="./scripts/flickity.css" media="screen">
+    <script src="./scripts/flickity.pkgd.min.js"></script>
 </head>
+
     <body>
 
-        <div id="mobile-alert">
+        <div id="mobile-alert" style="display:none;">
             <div onclick="this.parentNode.style.visibility='hidden'">𐌢</div>
+            <!--<div class="main-carousel flickity-enabled is-draggable" data-flickity="" tabindex="0" style="position:absolute; inset:0">
+                <div class="carousel-cell" style="width:100px">1</div>
+                <div class="carousel-cell" style="width:100px">2</div>
+                <div class="carousel-cell" style="width:100px">3</div>
+                <div class="carousel-cell" style="width:100px">4</div>
+                <div class="carousel-cell" style="width:100px">5</div>
+            </div>-->
             <p>Hello! I'm currently working on making this website mobile-friendly. Please view <u>max-dan-li.com</u> on your computer! </p>
         </div>
+
         <div class="frame"></div>
         <div class="frame"></div>
         <div class="frame"></div>
@@ -40,7 +53,7 @@
                     <img src="./silhouette.png" class="hero-image">
                     <div class="hero-title-block">
                         <h2>Mechanical engineering.<br>Data science. Design.</h2>
-                        <h1 style="font-size: 12rem; line-height: 9rem; margin: 0 0 1rem 0; text-transform: uppercase ">Max Li</h1>
+                        <h1>Max Li</h1>
                         <a class="outline-btn" style="text-decoration:none" href="resume.pdf">see cv</a>
                         <a class="gradient-btn" style="padding-right: 12px; text-decoration: none;" href="#projects">see work ↓</a>
                     </div>
@@ -60,8 +73,85 @@
 
             <!--Carousel-->
 
-            <div id="projects" class="parallax-text-block" style="transform: scale(.9) translateZ(10px);top: 100vh; display:flex; justify-content: center;">
-                <div class="carousel-wrap" style="width: 1920px;">
+
+
+
+            <div id="projects" class="parallax-text-block">
+
+
+                <div class="main-carousel" data-flickity='{"cellAlign":"center","contain":true, "wrapAround": true, "autoPlay": true, "draggable": true}'>
+                    <div class="carousel-cell">
+                        <div class="card">
+                            <img src="./carousel/auv/aurora.png" loading="lazy">
+                            <img src="./carousel/auv/fea.png" loading="lazy">
+                            <img src="./carousel/auv/machining.jpg" loading="lazy">
+                            <img src="./carousel/auv/sub.gif" loading="lazy">
+                            <img src="./carousel/auv/assembly.jpg" loading="lazy">
+                            <img src="./carousel/auv/sheet.png" loading="lazy">
+                            <div class="carousel-text-wrapper">
+                                <h1>Cornell Uni. Autonomous Underwater Vehicles</h1>
+                                <div></div>
+                                <p>RoboSub 2019-2022, CAD design, FEA, QA, cross-team integration, 200+ hrs real manufacturing experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="card">
+                            <img src="./carousel/blackbox/app.gif" loading="lazy" style="grid-area:1 / 1 / 3 / 2">
+                            <img src="./carousel/blackbox/github.png" loading="lazy">
+                            <img src="./carousel/blackbox/firebase.png" loading="lazy" style="object-fit:contain;">
+                            <img src="./carousel/blackbox/posters.png" loading="lazy">
+                            <img src="./carousel/blackbox/scan.gif" loading="lazy">
+                            <div class="carousel-text-wrapper">
+                                <h1>Contact Tracing App</h1>
+                                <div></div>
+                                <p>Hackathon, Android, Kotlin, SQL, with NFC/QR de/encode, installed in 5 local businesses</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="card">
+                            <img src="./carousel/real/bestworst.png" loading="lazy">
+                            <img src="./carousel/real/fl.png" loading="lazy">
+                            <img src="./carousel/real/ratio.png" loading="lazy" style="grid-area:2 / 1 / 3 / 3">
+                            <img src="./carousel/real/tableau.png" loading="lazy">
+                            <img src="./carousel/real/texas.png" loading="lazy">
+                            <div class="carousel-text-wrapper">
+                                <h1>Real Estate Data Analysis</h1>
+                                <div></div>
+                                <p>Zillow data visualized in Tableau, automated Python processing, pending Florida Real Estate License</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="card">
+                            <img src="./carousel/snowman/home.png" loading="lazy">
+                            <img src="./carousel/snowman/peer.png" loading="lazy">
+                            <img src="./carousel/snowman/fitness.png" loading="lazy">
+                            <img src="./carousel/snowman/species.png" loading="lazy">
+                            <img src="./carousel/snowman/graph.gif" loading="lazy" style="grid-area: 3 / 1 / 4 / 3; object-position:bottom;">
+                            <div class="carousel-text-wrapper">
+                                <h1>Snowman Game</h1>
+                                <div></div>
+                                <p>Custom web game with NEAT machine learning, multiplayer P2P server, HTML/CSS/JS, Python<br><br><span style="text-transform:lowercase">...all for an inside joke with my girlfriend</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-cell">
+                        <div class="card">
+                            <img src="./carousel/c4/files.png" loading="lazy">
+                            <img src="./carousel/c4/terminal.png" loading="lazy" style="object-position:left; grid-area:1 / 2 / 3 / 2">
+                            <img src="./carousel/c4/tboard.png" loading="lazy">
+                            <img src="./carousel/c4/wins.png" loading="lazy" style="grid-area:3 / 1 / 3 / 3">
+                            <div class="carousel-text-wrapper">
+                                <h1>Connect 4 MARL</h1>
+                                <div></div>
+                                <p>Work-in-progress custom multi-agent gym environment for A2C and PPO testing, Tensorboard, Python machine learning with stable_baselines3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-wrap">
                     <div class="carousel">
                         <div class="card">
                             <img src="./carousel/auv/aurora.png" loading="lazy">
@@ -70,9 +160,9 @@
                             <img src="./carousel/auv/sub.gif" loading="lazy">
                             <img src="./carousel/auv/assembly.jpg" loading="lazy">
                             <img src="./carousel/auv/sheet.png" loading="lazy">
-                            <div class="carousel-text-wrapper" style="justify-content: flex-start;">
+                            <div class="carousel-text-wrapper">
                                 <h1>Cornell Uni. Autonomous Underwater Vehicles</h1>
-                                <div style="height: 0.5ch; width: 7ch; background: linear-gradient(to right, #4B2ED7, #2855F7)"></div>
+                                <div></div>
                                 <p>RoboSub 2019-2022, CAD design, FEA, QA, cross-team integration, 200+ hrs real manufacturing experience</p>
                             </div>
                         </div>
@@ -82,9 +172,9 @@
                             <img src="./carousel/blackbox/firebase.png" loading="lazy" style="object-fit:contain;">
                             <img src="./carousel/blackbox/posters.png" loading="lazy">
                             <img src="./carousel/blackbox/scan.gif" loading="lazy">
-                            <div class="carousel-text-wrapper" style="justify-content: flex-end;">
+                            <div class="carousel-text-wrapper">
                                 <h1>Contact Tracing App</h1>
-                                <div style="height: 0.5ch; width: 7ch; background: linear-gradient(to right, #4B2ED7, #2855F7)"></div>
+                                <div></div>
                                 <p>Hackathon, Android, Kotlin, SQL, with NFC/QR de/encode, installed in 5 local businesses</p>
                             </div>
                         </div>
@@ -94,9 +184,9 @@
                             <img src="./carousel/real/ratio.png" loading="lazy" style="grid-area:2 / 1 / 3 / 3">
                             <img src="./carousel/real/tableau.png" loading="lazy">
                             <img src="./carousel/real/texas.png" loading="lazy">
-                            <div class="carousel-text-wrapper" style="justify-content: flex-start;">
+                            <div class="carousel-text-wrapper">
                                 <h1>Real Estate Data Analysis</h1>
-                                <div style="height: 0.5ch; width: 7ch; background: linear-gradient(to right, #4B2ED7, #2855F7)"></div>
+                                <div></div>
                                 <p>Zillow data visualized in Tableau, automated Python processing, pending Florida Real Estate License</p>
                             </div>
                         </div>
@@ -106,9 +196,9 @@
                             <img src="./carousel/snowman/fitness.png" loading="lazy">
                             <img src="./carousel/snowman/species.png" loading="lazy">
                             <img src="./carousel/snowman/graph.gif" loading="lazy" style="grid-area: 3 / 1 / 4 / 3; object-position:bottom;">
-                            <div class="carousel-text-wrapper" style="justify-content: flex-end;">
+                            <div class="carousel-text-wrapper">
                                 <h1>Snowman Game</h1>
-                                <div style="height: 0.5ch; width: 7ch; background: linear-gradient(to right, #4B2ED7, #2855F7)"></div>
+                                <div></div>
                                 <p>Custom web game with NEAT machine learning, multiplayer P2P server, HTML/CSS/JS, Python<br><br><span style="text-transform:lowercase">...all for an inside joke with my girlfriend</span></p>
                             </div>
                         </div>
@@ -117,20 +207,25 @@
                             <img src="./carousel/c4/terminal.png" loading="lazy" style="object-position:left; grid-area:1 / 2 / 3 / 2">
                             <img src="./carousel/c4/tboard.png" loading="lazy">
                             <img src="./carousel/c4/wins.png" loading="lazy" style="grid-area:3 / 1 / 3 / 3">
-                            <div class="carousel-text-wrapper" style="justify-content: flex-start;">
+                            <div class="carousel-text-wrapper">
                                 <h1>Connect 4 MARL</h1>
-                                <div style="height: 0.5ch; width: 7ch; background: linear-gradient(to right, #4B2ED7, #2855F7)"></div>
+                                <div></div>
                                 <p>Work-in-progress custom multi-agent gym environment for A2C and PPO testing, Tensorboard, Python machine learning with stable_baselines3</p>
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
 
-
-            <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);top: 200vh; pointer-events:stroke;">
+            <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 200vh;">
                 <div class="grid-container" style="align-items: start;">
-                    <div class="parallax-text" style="grid-area: 2 / 2 / 4 / 8; padding-right:2rem">
+                    <div id="img1" class="box-shadow odd">
+                    </div>
+                </div>
+            </div>
+            <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);top: 200vh;">
+                <div class="grid-container" style="align-items: start;">
+                    <div class="parallax-text odd">
                         <div id="para1">
                             <h1 class="parallax" style="visibility:hidden">iPhone Technical Operations</h1>
                             <p>My 6 months at Apple were entirely virtual. Working on the mass production-end of Apple's optics and camera business allowed me to collaborate intensely with teams in machine learning, data services, and on-site management. As an independent project owner &amp; DRI, I showcased my ability to learn from across the disciplines to simplify cavity-level analytics, develop new Python packages for 40x faster actionable data. As someone with a public speaking background, I embraced the Apple culture of strong presenters to deliver concise and effective technical keynotes to Senior Directors, receiving glowing praise.</p>
@@ -138,31 +233,25 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 200vh; pointer-events: stroke;">
+            <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 200vh;">
                 <div class="grid-container" style="align-items: start;">
-                    <div style="grid-area: 2 / 2 / 4 / 8; padding-right:2rem">
+                    <div class="parallax-text odd">
                         <h1 class="parallax">iPhone Technical Operations</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 200vh; pointer-events: stroke;">
-                <div class="grid-container" style="align-items: start;">
-                    <div id="img1" class="box-shadow" style="background-color: white; grid-area: 2 / 8 / 4 / 12; width: 100%; height: 0px; padding-bottom: 100%; background-image: url(&quot;logos/apple.svg&quot;); background-repeat: no-repeat; background-position: 50% 45%; background-size: 50%; box-shadow: rgba(22, 22, 22, 0.02) 0px 0px 0px, rgba(22, 22, 22, 0.02) 4.33013px 2.5px 0.3px, rgba(22, 22, 22, 0.016) 8.66025px 5px 0.6px, rgba(22, 22, 22, 0.016) 12.9904px 7.5px 0.9px, rgba(22, 22, 22, 0.016) 17.3205px 10px 1.2px, rgba(22, 22, 22, 0.016) 21.6506px 12.5px 1.5px, rgba(22, 22, 22, 0.016) 25.9808px 15px 1.8px, rgba(22, 22, 22, 0.016) 30.3109px 17.5px 2.1px, rgba(22, 22, 22, 0.016) 34.641px 20px 2.4px, rgba(22, 22, 22, 0.016) 38.9711px 22.5px 2.7px, rgba(22, 22, 22, 0.016) 43.3013px 25px 3px, rgba(22, 22, 22, 0.016) 47.6314px 27.5px 3.3px, rgba(22, 22, 22, 0.016) 51.9615px 30px 3.6px, rgba(22, 22, 22, 0.016) 56.2917px 32.5px 3.9px, rgba(22, 22, 22, 0.016) 60.6218px 35px 4.2px, rgba(22, 22, 22, 0.016) 64.9519px 37.5px 4.5px, rgba(22, 22, 22, 0.016) 69.282px 40px 4.8px, rgba(22, 22, 22, 0.016) 73.6122px 42.5px 5.1px, rgba(22, 22, 22, 0.016) 77.9423px 45px 5.4px, rgba(22, 22, 22, 0.016) 82.2724px 47.5px 5.7px, rgba(22, 22, 22, 0.016) 86.6025px 50px 6px, rgba(22, 22, 22, 0.016) 90.9327px 52.5px 6.3px, rgba(22, 22, 22, 0.01) 95.2628px 55px 6.6px, rgba(22, 22, 22, 0.01) 99.5929px 57.5px 6.9px, rgba(22, 22, 22, 0.01) 103.923px 60px 7.2px, rgba(22, 22, 22, 0.01) 108.253px 62.5px 7.5px, rgba(22, 22, 22, 0.01) 112.583px 65px 7.8px, rgba(22, 22, 22, 0.01) 116.913px 67.5px 8.1px, rgba(22, 22, 22, 0.01) 121.244px 70px 8.4px, rgba(22, 22, 22, 0.01) 125.574px 72.5px 8.7px, rgba(22, 22, 22, 0.01) 129.904px 75px 9px, rgba(22, 22, 22, 0.01) 134.234px 77.5px 9.3px, rgba(22, 22, 22, 0.01) 138.564px 80px 9.6px, rgba(22, 22, 22, 0.01) 142.894px 82.5px 9.9px, rgba(22, 22, 22, 0.01) 147.224px 85px 10.2px, rgba(22, 22, 22, 0.01) 151.554px 87.5px 10.5px, rgba(22, 22, 22, 0.01) 155.885px 90px 10.8px, rgba(22, 22, 22, 0.01) 160.215px 92.5px 11.1px, rgba(22, 22, 22, 0.01) 164.545px 95px 11.4px, rgba(22, 22, 22, 0.01) 168.875px 97.5px 11.7px, rgba(22, 22, 22, 0.01) 173.205px 100px 12px, rgba(22, 22, 22, 0.01) 177.535px 102.5px 12.3px, rgba(22, 22, 22, 0.008) 181.865px 105px 12.6px, rgba(22, 22, 22, 0.008) 186.195px 107.5px 12.9px, rgba(22, 22, 22, 0.008) 190.526px 110px 13.2px, rgba(22, 22, 22, 0.008) 194.856px 112.5px 13.5px, rgba(22, 22, 22, 0.008) 199.186px 115px 13.8px, rgba(22, 22, 22, 0.008) 203.516px 117.5px 14.1px, rgba(22, 22, 22, 0.008) 207.846px 120px 14.4px, rgba(22, 22, 22, 0.008) 212.176px 122.5px 14.7px, rgba(22, 22, 22, 0.008) 216.506px 125px 15px, rgba(22, 22, 22, 0.008) 220.836px 127.5px 15.3px, rgba(22, 22, 22, 0.008) 225.167px 130px 15.6px, rgba(22, 22, 22, 0.008) 229.497px 132.5px 15.9px, rgba(22, 22, 22, 0.008) 233.827px 135px 16.2px, rgba(22, 22, 22, 0.008) 238.157px 137.5px 16.5px, rgba(22, 22, 22, 0.008) 242.487px 140px 16.8px, rgba(22, 22, 22, 0.008) 246.817px 142.5px 17.1px, rgba(22, 22, 22, 0.008) 251.147px 145px 17.4px, rgba(22, 22, 22, 0.008) 255.477px 147.5px 17.7px, rgba(22, 22, 22, 0.008) 259.808px 150px 18px, rgba(22, 22, 22, 0.004) 264.138px 152.5px 18.3px, rgba(22, 22, 22, 0.004) 268.468px 155px 18.6px, rgba(22, 22, 22, 0.004) 272.798px 157.5px 18.9px, rgba(22, 22, 22, 0.004) 277.128px 160px 19.2px, rgba(22, 22, 22, 0.004) 281.458px 162.5px 19.5px, rgba(22, 22, 22, 0.004) 285.788px 165px 19.8px, rgba(22, 22, 22, 0.004) 290.119px 167.5px 20.1px, rgba(22, 22, 22, 0.004) 294.449px 170px 20.4px, rgba(22, 22, 22, 0.004) 298.779px 172.5px 20.7px, rgba(22, 22, 22, 0.004) 303.109px 175px 21px, rgba(22, 22, 22, 0.004) 307.439px 177.5px 21.3px, rgba(22, 22, 22, 0.004) 311.769px 180px 21.6px, rgba(22, 22, 22, 0.004) 316.099px 182.5px 21.9px, rgba(22, 22, 22, 0.004) 320.429px 185px 22.2px, rgba(22, 22, 22, 0.004) 324.76px 187.5px 22.5px, rgba(22, 22, 22, 0.004) 329.09px 190px 22.8px, rgba(22, 22, 22, 0.004) 333.42px 192.5px 23.1px, rgba(22, 22, 22, 0.004) 337.75px 195px 23.4px, rgba(22, 22, 22, 0.004) 342.08px 197.5px 23.7px, rgba(22, 22, 22, 0.004) 346.41px 200px 24px, rgba(22, 22, 22, 0) 350.74px 202.5px 24.3px, rgba(22, 22, 22, 0) 355.07px 205px 24.6px, rgba(22, 22, 22, 0) 359.401px 207.5px 24.9px, rgba(22, 22, 22, 0) 363.731px 210px 25.2px, rgba(22, 22, 22, 0) 368.061px 212.5px 25.5px, rgba(22, 22, 22, 0) 372.391px 215px 25.8px, rgba(22, 22, 22, 0) 376.721px 217.5px 26.1px, rgba(22, 22, 22, 0) 381.051px 220px 26.4px, rgba(22, 22, 22, 0) 385.381px 222.5px 26.7px, rgba(22, 22, 22, 0) 389.711px 225px 27px, rgba(22, 22, 22, 0) 394.042px 227.5px 27.3px, rgba(22, 22, 22, 0) 398.372px 230px 27.6px, rgba(22, 22, 22, 0) 402.702px 232.5px 27.9px, rgba(22, 22, 22, 0) 407.032px 235px 28.2px, rgba(22, 22, 22, 0) 411.362px 237.5px 28.5px, rgba(22, 22, 22, 0) 415.692px 240px 28.8px, rgba(22, 22, 22, 0) 420.022px 242.5px 29.1px, rgba(22, 22, 22, 0) 424.352px 245px 29.4px, rgba(22, 22, 22, 0) 428.683px 247.5px 29.7px;">
                     </div>
                 </div>
             </div>
             <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 200vh; pointer-events: none;">
                 <div class="grid-container" style="align-items: start; pointer-events: none;">
-                    <div class="parallax-text" style="grid-area: 2 / 2 / 4 / 8; padding-right: 2rem; pointer-events: none;">
+                    <div class="parallax-text odd">
                         <div id="para1" style="pointer-events: none;">
                             <h1 class="parallax" style="visibility:hidden">iPhone Technical Operations</h1>
                             <p style="visibility:hidden">My 6 months at Apple were entirely virtual. Working on the mass production-end of Apple's optics and camera business allowed me to collaborate intensely with teams in machine learning, data services, and on-site management. As an independent project owner &amp; DRI, I showcased my ability to learn from across the disciplines to simplify cavity-level analytics, develop new Python packages for 40x faster actionable data. As someone with a public speaking background, I embraced the Apple culture of strong presenters to deliver concise and effective technical keynotes to Senior Directors, receiving glowing praise.</p>
                             <a class="gradient-btn" style="margin-top: 3rem; display: block; visibility: hidden;">see docs</a>
                         </div>
                     </div>
-                    <div style="grid-area: 2 / 1 / 3 / 2; width:min-content">
-                        <h2 style="font-size: 1.5rem; margin:.5rem 0 0 0;font-weight:normal">2021</h2>
-                        <h3 style="font-size:.8rem; font-weight:normal; opacity:80%; text-transform:uppercase; margin:0; text-align:right">June</h3>
+                    <div class="parallax-date">
+                        <h2 >2021</h2>
+                        <h3 >June</h3>
                     </div>
                 </div>
             </div>
@@ -171,12 +260,12 @@
 
             <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 300vh; ">
                 <div class="grid-container" style="align-items: start;">
-                    <div class="box-shadow" style="background-color: rgb(12, 46, 106); grid-area: 2 / 2 / 4 / 6; width: 100%; height: 0px; padding-bottom: 100%; background-image: url(&quot;logos/bluespace.png&quot;); background-repeat: no-repeat; background-position: 50% 45%; background-size: 80%; box-shadow: rgba(22, 22, 22, 0.02) 0px 0px 0px, rgba(22, 22, 22, 0.02) 4.33013px 2.5px 0.3px, rgba(22, 22, 22, 0.016) 8.66025px 5px 0.6px, rgba(22, 22, 22, 0.016) 12.9904px 7.5px 0.9px, rgba(22, 22, 22, 0.016) 17.3205px 10px 1.2px, rgba(22, 22, 22, 0.016) 21.6506px 12.5px 1.5px, rgba(22, 22, 22, 0.016) 25.9808px 15px 1.8px, rgba(22, 22, 22, 0.016) 30.3109px 17.5px 2.1px, rgba(22, 22, 22, 0.016) 34.641px 20px 2.4px, rgba(22, 22, 22, 0.016) 38.9711px 22.5px 2.7px, rgba(22, 22, 22, 0.016) 43.3013px 25px 3px, rgba(22, 22, 22, 0.016) 47.6314px 27.5px 3.3px, rgba(22, 22, 22, 0.016) 51.9615px 30px 3.6px, rgba(22, 22, 22, 0.016) 56.2917px 32.5px 3.9px, rgba(22, 22, 22, 0.016) 60.6218px 35px 4.2px, rgba(22, 22, 22, 0.016) 64.9519px 37.5px 4.5px, rgba(22, 22, 22, 0.016) 69.282px 40px 4.8px, rgba(22, 22, 22, 0.016) 73.6122px 42.5px 5.1px, rgba(22, 22, 22, 0.016) 77.9423px 45px 5.4px, rgba(22, 22, 22, 0.016) 82.2724px 47.5px 5.7px, rgba(22, 22, 22, 0.016) 86.6025px 50px 6px, rgba(22, 22, 22, 0.016) 90.9327px 52.5px 6.3px, rgba(22, 22, 22, 0.01) 95.2628px 55px 6.6px, rgba(22, 22, 22, 0.01) 99.5929px 57.5px 6.9px, rgba(22, 22, 22, 0.01) 103.923px 60px 7.2px, rgba(22, 22, 22, 0.01) 108.253px 62.5px 7.5px, rgba(22, 22, 22, 0.01) 112.583px 65px 7.8px, rgba(22, 22, 22, 0.01) 116.913px 67.5px 8.1px, rgba(22, 22, 22, 0.01) 121.244px 70px 8.4px, rgba(22, 22, 22, 0.01) 125.574px 72.5px 8.7px, rgba(22, 22, 22, 0.01) 129.904px 75px 9px, rgba(22, 22, 22, 0.01) 134.234px 77.5px 9.3px, rgba(22, 22, 22, 0.01) 138.564px 80px 9.6px, rgba(22, 22, 22, 0.01) 142.894px 82.5px 9.9px, rgba(22, 22, 22, 0.01) 147.224px 85px 10.2px, rgba(22, 22, 22, 0.01) 151.554px 87.5px 10.5px, rgba(22, 22, 22, 0.01) 155.885px 90px 10.8px, rgba(22, 22, 22, 0.01) 160.215px 92.5px 11.1px, rgba(22, 22, 22, 0.01) 164.545px 95px 11.4px, rgba(22, 22, 22, 0.01) 168.875px 97.5px 11.7px, rgba(22, 22, 22, 0.01) 173.205px 100px 12px, rgba(22, 22, 22, 0.01) 177.535px 102.5px 12.3px, rgba(22, 22, 22, 0.008) 181.865px 105px 12.6px, rgba(22, 22, 22, 0.008) 186.195px 107.5px 12.9px, rgba(22, 22, 22, 0.008) 190.526px 110px 13.2px, rgba(22, 22, 22, 0.008) 194.856px 112.5px 13.5px, rgba(22, 22, 22, 0.008) 199.186px 115px 13.8px, rgba(22, 22, 22, 0.008) 203.516px 117.5px 14.1px, rgba(22, 22, 22, 0.008) 207.846px 120px 14.4px, rgba(22, 22, 22, 0.008) 212.176px 122.5px 14.7px, rgba(22, 22, 22, 0.008) 216.506px 125px 15px, rgba(22, 22, 22, 0.008) 220.836px 127.5px 15.3px, rgba(22, 22, 22, 0.008) 225.167px 130px 15.6px, rgba(22, 22, 22, 0.008) 229.497px 132.5px 15.9px, rgba(22, 22, 22, 0.008) 233.827px 135px 16.2px, rgba(22, 22, 22, 0.008) 238.157px 137.5px 16.5px, rgba(22, 22, 22, 0.008) 242.487px 140px 16.8px, rgba(22, 22, 22, 0.008) 246.817px 142.5px 17.1px, rgba(22, 22, 22, 0.008) 251.147px 145px 17.4px, rgba(22, 22, 22, 0.008) 255.477px 147.5px 17.7px, rgba(22, 22, 22, 0.008) 259.808px 150px 18px, rgba(22, 22, 22, 0.004) 264.138px 152.5px 18.3px, rgba(22, 22, 22, 0.004) 268.468px 155px 18.6px, rgba(22, 22, 22, 0.004) 272.798px 157.5px 18.9px, rgba(22, 22, 22, 0.004) 277.128px 160px 19.2px, rgba(22, 22, 22, 0.004) 281.458px 162.5px 19.5px, rgba(22, 22, 22, 0.004) 285.788px 165px 19.8px, rgba(22, 22, 22, 0.004) 290.119px 167.5px 20.1px, rgba(22, 22, 22, 0.004) 294.449px 170px 20.4px, rgba(22, 22, 22, 0.004) 298.779px 172.5px 20.7px, rgba(22, 22, 22, 0.004) 303.109px 175px 21px, rgba(22, 22, 22, 0.004) 307.439px 177.5px 21.3px, rgba(22, 22, 22, 0.004) 311.769px 180px 21.6px, rgba(22, 22, 22, 0.004) 316.099px 182.5px 21.9px, rgba(22, 22, 22, 0.004) 320.429px 185px 22.2px, rgba(22, 22, 22, 0.004) 324.76px 187.5px 22.5px, rgba(22, 22, 22, 0.004) 329.09px 190px 22.8px, rgba(22, 22, 22, 0.004) 333.42px 192.5px 23.1px, rgba(22, 22, 22, 0.004) 337.75px 195px 23.4px, rgba(22, 22, 22, 0.004) 342.08px 197.5px 23.7px, rgba(22, 22, 22, 0.004) 346.41px 200px 24px, rgba(22, 22, 22, 0) 350.74px 202.5px 24.3px, rgba(22, 22, 22, 0) 355.07px 205px 24.6px, rgba(22, 22, 22, 0) 359.401px 207.5px 24.9px, rgba(22, 22, 22, 0) 363.731px 210px 25.2px, rgba(22, 22, 22, 0) 368.061px 212.5px 25.5px, rgba(22, 22, 22, 0) 372.391px 215px 25.8px, rgba(22, 22, 22, 0) 376.721px 217.5px 26.1px, rgba(22, 22, 22, 0) 381.051px 220px 26.4px, rgba(22, 22, 22, 0) 385.381px 222.5px 26.7px, rgba(22, 22, 22, 0) 389.711px 225px 27px, rgba(22, 22, 22, 0) 394.042px 227.5px 27.3px, rgba(22, 22, 22, 0) 398.372px 230px 27.6px, rgba(22, 22, 22, 0) 402.702px 232.5px 27.9px, rgba(22, 22, 22, 0) 407.032px 235px 28.2px, rgba(22, 22, 22, 0) 411.362px 237.5px 28.5px, rgba(22, 22, 22, 0) 415.692px 240px 28.8px, rgba(22, 22, 22, 0) 420.022px 242.5px 29.1px, rgba(22, 22, 22, 0) 424.352px 245px 29.4px, rgba(22, 22, 22, 0) 428.683px 247.5px 29.7px;"></div>
+                    <div class="box-shadow even"></div>
                 </div>
             </div>
             <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);  top: 300vh;">
                 <div class="grid-container" style="align-items: start;">
-                    <div class="parallax-text" style="grid-area: 2 / 6 / 4 / 12; padding-left: 2rem">
+                    <div class="parallax-text even">
                         <div id="para1">
                             <h1 class="parallax" style="visibility:hidden">Engineering &amp; Business Development</h1>
                             <p>BlueSpace.ai is an autonomous driving company in Series B. Working at an autonomous driving software startup gave me the valuable opportunity to wear many hats and work closely with the C-level management that includes a Forbes 30-under-30 CEO. My work covered engineering design of product prototypes, competitive analysis, web design/programming, and brand management. My critical contributions in design and implementation of mission-critical investor and partner materials culminated in BlueSpace's naming as a 2021 NASA iTech Cycle I winner.</p>
@@ -186,23 +275,23 @@
             </div>
             <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 300vh; ">
                 <div class="grid-container" style="align-items: start;">
-                    <div style="grid-area: 2 / 6 / 4 / 12; padding-left: 2rem ">
+                    <div class="parallax-text even">
                         <h1 class="parallax">Engineering &amp; Business Development</h1>
                     </div>
                 </div>
             </div>
             <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 300vh; pointer-events: none;">
                 <div class="grid-container" style="align-items: start; pointer-events: none;">
-                    <div class="parallax-text" style="grid-area: 2 / 6 / 4 / 12; padding-left: 2rem; pointer-events: none; ">
+                    <div class="parallax-text even">
                         <div id="para1" style="pointer-events:none;">
                             <h1 class="parallax" style="visibility:hidden">Engineering &amp; Business Development</h1>
                             <p style="visibility:hidden">BlueSpace.ai is an autonomous driving company in Series B. Working at an autonomous driving software startup gave me the valuable opportunity to wear many hats and work closely with the C-level management that includes a Forbes 30-under-30 CEO. My work covered engineering design of product prototypes, competitive analysis, web design/programming, and brand management. My critical contributions in design and implementation of mission-critical investor and partner materials culminated in BlueSpace's naming as a 2021 NASA iTech Cycle I winner.</p>
                             <a class="gradient-btn" style="margin-top: 3rem; display: block; visibility: hidden;">see docs</a>
                         </div>
                     </div>
-                    <div style="grid-area: 2 / 1 / 3 / 2; width:min-content">
-                        <h2 style="font-size: 1.5rem; margin:.5rem 0 0 0;font-weight:normal">2021</h2>
-                        <h3 style="font-size:.8rem; font-weight:normal; opacity:80%; text-transform:uppercase; margin:0; text-align:right">Jan</h3>
+                    <div class="parallax-date">
+                        <h2 >2021</h2>
+                        <h3 >Jan</h3>
                     </div>
                 </div>
             </div>
@@ -210,7 +299,7 @@
 
             <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);  top: 400vh;">
                 <div class="grid-container" style="align-items: start;">
-                    <div class="parallax-text" style="grid-area: 2 / 2 / 4 / 8; padding-right:2rem">
+                    <div class="parallax-text odd">
                         <div id="para1">
                             <h1 class="parallax" style="visibility:hidden">Product &amp; Brand Management Consultant</h1>
                             <p>Listener Pro is a Shenzhen consumer electronics company, specializing in audio devices. Working with the China team across timezones, I led the full overhaul of the company's online salesfront. On top of advising C-level executives in project management and business strategy, and preparing bilingual project reports and proposals, my work in web development and analytics boosted business inquiries 30-fold over the course of 4 months.</p>
@@ -220,29 +309,29 @@
             </div>
             <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 400vh; ">
                 <div class="grid-container" style="align-items: start;">
-                    <div class="box-shadow" style="background-color: rgb(23, 23, 23); grid-area: 2 / 8 / 4 / 12; width: 100%; height: 0px; padding-bottom: 100%; background-image: url(&quot;logos/listenerpro.png&quot;); background-repeat: no-repeat; background-position: 50% 45%; background-size: 50%; box-shadow: rgba(22, 22, 22, 0.02) 0px 0px 0px, rgba(22, 22, 22, 0.02) 4.33013px 2.5px 0.3px, rgba(22, 22, 22, 0.016) 8.66025px 5px 0.6px, rgba(22, 22, 22, 0.016) 12.9904px 7.5px 0.9px, rgba(22, 22, 22, 0.016) 17.3205px 10px 1.2px, rgba(22, 22, 22, 0.016) 21.6506px 12.5px 1.5px, rgba(22, 22, 22, 0.016) 25.9808px 15px 1.8px, rgba(22, 22, 22, 0.016) 30.3109px 17.5px 2.1px, rgba(22, 22, 22, 0.016) 34.641px 20px 2.4px, rgba(22, 22, 22, 0.016) 38.9711px 22.5px 2.7px, rgba(22, 22, 22, 0.016) 43.3013px 25px 3px, rgba(22, 22, 22, 0.016) 47.6314px 27.5px 3.3px, rgba(22, 22, 22, 0.016) 51.9615px 30px 3.6px, rgba(22, 22, 22, 0.016) 56.2917px 32.5px 3.9px, rgba(22, 22, 22, 0.016) 60.6218px 35px 4.2px, rgba(22, 22, 22, 0.016) 64.9519px 37.5px 4.5px, rgba(22, 22, 22, 0.016) 69.282px 40px 4.8px, rgba(22, 22, 22, 0.016) 73.6122px 42.5px 5.1px, rgba(22, 22, 22, 0.016) 77.9423px 45px 5.4px, rgba(22, 22, 22, 0.016) 82.2724px 47.5px 5.7px, rgba(22, 22, 22, 0.016) 86.6025px 50px 6px, rgba(22, 22, 22, 0.016) 90.9327px 52.5px 6.3px, rgba(22, 22, 22, 0.01) 95.2628px 55px 6.6px, rgba(22, 22, 22, 0.01) 99.5929px 57.5px 6.9px, rgba(22, 22, 22, 0.01) 103.923px 60px 7.2px, rgba(22, 22, 22, 0.01) 108.253px 62.5px 7.5px, rgba(22, 22, 22, 0.01) 112.583px 65px 7.8px, rgba(22, 22, 22, 0.01) 116.913px 67.5px 8.1px, rgba(22, 22, 22, 0.01) 121.244px 70px 8.4px, rgba(22, 22, 22, 0.01) 125.574px 72.5px 8.7px, rgba(22, 22, 22, 0.01) 129.904px 75px 9px, rgba(22, 22, 22, 0.01) 134.234px 77.5px 9.3px, rgba(22, 22, 22, 0.01) 138.564px 80px 9.6px, rgba(22, 22, 22, 0.01) 142.894px 82.5px 9.9px, rgba(22, 22, 22, 0.01) 147.224px 85px 10.2px, rgba(22, 22, 22, 0.01) 151.554px 87.5px 10.5px, rgba(22, 22, 22, 0.01) 155.885px 90px 10.8px, rgba(22, 22, 22, 0.01) 160.215px 92.5px 11.1px, rgba(22, 22, 22, 0.01) 164.545px 95px 11.4px, rgba(22, 22, 22, 0.01) 168.875px 97.5px 11.7px, rgba(22, 22, 22, 0.01) 173.205px 100px 12px, rgba(22, 22, 22, 0.01) 177.535px 102.5px 12.3px, rgba(22, 22, 22, 0.008) 181.865px 105px 12.6px, rgba(22, 22, 22, 0.008) 186.195px 107.5px 12.9px, rgba(22, 22, 22, 0.008) 190.526px 110px 13.2px, rgba(22, 22, 22, 0.008) 194.856px 112.5px 13.5px, rgba(22, 22, 22, 0.008) 199.186px 115px 13.8px, rgba(22, 22, 22, 0.008) 203.516px 117.5px 14.1px, rgba(22, 22, 22, 0.008) 207.846px 120px 14.4px, rgba(22, 22, 22, 0.008) 212.176px 122.5px 14.7px, rgba(22, 22, 22, 0.008) 216.506px 125px 15px, rgba(22, 22, 22, 0.008) 220.836px 127.5px 15.3px, rgba(22, 22, 22, 0.008) 225.167px 130px 15.6px, rgba(22, 22, 22, 0.008) 229.497px 132.5px 15.9px, rgba(22, 22, 22, 0.008) 233.827px 135px 16.2px, rgba(22, 22, 22, 0.008) 238.157px 137.5px 16.5px, rgba(22, 22, 22, 0.008) 242.487px 140px 16.8px, rgba(22, 22, 22, 0.008) 246.817px 142.5px 17.1px, rgba(22, 22, 22, 0.008) 251.147px 145px 17.4px, rgba(22, 22, 22, 0.008) 255.477px 147.5px 17.7px, rgba(22, 22, 22, 0.008) 259.808px 150px 18px, rgba(22, 22, 22, 0.004) 264.138px 152.5px 18.3px, rgba(22, 22, 22, 0.004) 268.468px 155px 18.6px, rgba(22, 22, 22, 0.004) 272.798px 157.5px 18.9px, rgba(22, 22, 22, 0.004) 277.128px 160px 19.2px, rgba(22, 22, 22, 0.004) 281.458px 162.5px 19.5px, rgba(22, 22, 22, 0.004) 285.788px 165px 19.8px, rgba(22, 22, 22, 0.004) 290.119px 167.5px 20.1px, rgba(22, 22, 22, 0.004) 294.449px 170px 20.4px, rgba(22, 22, 22, 0.004) 298.779px 172.5px 20.7px, rgba(22, 22, 22, 0.004) 303.109px 175px 21px, rgba(22, 22, 22, 0.004) 307.439px 177.5px 21.3px, rgba(22, 22, 22, 0.004) 311.769px 180px 21.6px, rgba(22, 22, 22, 0.004) 316.099px 182.5px 21.9px, rgba(22, 22, 22, 0.004) 320.429px 185px 22.2px, rgba(22, 22, 22, 0.004) 324.76px 187.5px 22.5px, rgba(22, 22, 22, 0.004) 329.09px 190px 22.8px, rgba(22, 22, 22, 0.004) 333.42px 192.5px 23.1px, rgba(22, 22, 22, 0.004) 337.75px 195px 23.4px, rgba(22, 22, 22, 0.004) 342.08px 197.5px 23.7px, rgba(22, 22, 22, 0.004) 346.41px 200px 24px, rgba(22, 22, 22, 0) 350.74px 202.5px 24.3px, rgba(22, 22, 22, 0) 355.07px 205px 24.6px, rgba(22, 22, 22, 0) 359.401px 207.5px 24.9px, rgba(22, 22, 22, 0) 363.731px 210px 25.2px, rgba(22, 22, 22, 0) 368.061px 212.5px 25.5px, rgba(22, 22, 22, 0) 372.391px 215px 25.8px, rgba(22, 22, 22, 0) 376.721px 217.5px 26.1px, rgba(22, 22, 22, 0) 381.051px 220px 26.4px, rgba(22, 22, 22, 0) 385.381px 222.5px 26.7px, rgba(22, 22, 22, 0) 389.711px 225px 27px, rgba(22, 22, 22, 0) 394.042px 227.5px 27.3px, rgba(22, 22, 22, 0) 398.372px 230px 27.6px, rgba(22, 22, 22, 0) 402.702px 232.5px 27.9px, rgba(22, 22, 22, 0) 407.032px 235px 28.2px, rgba(22, 22, 22, 0) 411.362px 237.5px 28.5px, rgba(22, 22, 22, 0) 415.692px 240px 28.8px, rgba(22, 22, 22, 0) 420.022px 242.5px 29.1px, rgba(22, 22, 22, 0) 424.352px 245px 29.4px, rgba(22, 22, 22, 0) 428.683px 247.5px 29.7px;">
+                    <div class="box-shadow odd" style=" ">
                     </div>
                 </div>
             </div>
             <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 400vh; ">
                 <div class="grid-container" style="align-items: start;">
-                    <div style="grid-area: 2 / 2 / 4 / 8; padding-right:2rem">
+                    <div class="parallax-text odd">
                         <h1 class="parallax">Product &amp; Brand Management Consultant</h1>
                     </div>
                 </div>
             </div>
             <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 400vh; pointer-events: none;">
                 <div class="grid-container" style="align-items: start; pointer-events: none;">
-                    <div class="parallax-text" style="grid-area: 2 / 2 / 4 / 8; padding-right: 2rem; pointer-events: none;">
+                    <div class="parallax-text odd">
                         <div id="para1" style="pointer-events: none;">
                             <h1 class="parallax" style="visibility:hidden">Product &amp; Brand Management Consultant</h1>
                             <p style="visibility:hidden">Listener Pro is a Shenzhen consumer electronics company, specializing in audio devices. Working with the China team across timezones, I led the full overhaul of the company's online salesfront. On top of advising C-level executives in project management and business strategy, and preparing bilingual project reports and proposals, my work in web development and analytics boosted business inquiries 30-fold over the course of 4 months.</p>
                             <a class="gradient-btn" style="margin-top: 3rem; display: block; visibility: hidden;">see docs</a>
                         </div>
                     </div>
-                    <div style="grid-area: 2 / 1 / 3 / 2; width:min-content">
-                        <h2 style="font-size: 1.5rem; margin:.5rem 0 0 0;font-weight:normal">2020</h2>
-                        <h3 style="font-size:.8rem; font-weight:normal; opacity:80%; text-transform:uppercase; margin:0; text-align:right">May</h3>
+                    <div class="parallax-date">
+                        <h2 >2020</h2>
+                        <h3 >May</h3>
                     </div>
                 </div>
             </div>
@@ -268,6 +357,29 @@
         </div>
 
         <script>
+
+            // mobile only
+            function mobileParallaxTextBackgrounds() {
+                if (window.innerWidth < 599) {
+                    para_texts = document.querySelectorAll(".grid-container .parallax-text")
+                    for (i = 0; i < para_texts.length; i += 3) {
+                        para_texts[i].style.background = "#171717"
+                    }
+                }
+            }
+            mobileParallaxTextBackgrounds()
+            window.addEventListener('resize', mobileParallaxTextBackgrounds);
+
+
+            // fix flickity viewports
+            function flickViewport() {
+                var flickityVports = document.querySelectorAll(".flickity-viewport")
+                for (i = 0; i < flickityVports.length; i++) {
+                    flickityVports[i].style.height = "100%"
+                }
+            }
+            flickViewport()
+
             // load content
             url = window.location.href
             var params = new URLSearchParams(url.split("?")[1])
@@ -305,7 +417,8 @@
                     "logo": "bluespace.png",
                     "style": {
                         "background-color": "rgb(12, 46, 106)",
-                        "background-position": "50% 45%"
+                        "background-position": "50% 45%",
+                        "background-size": "80%"
                     },
                     "link": "",
                     "tags": {
@@ -367,7 +480,7 @@
                     document.querySelectorAll(".parallax-text-block a")[i].style.visibility = "hidden";
                 }
 
-                //desc 
+                //desc
                 tags = Object.keys(content[i].tags)
                 if (tag in tags) {
                     desc = content[i].tags[tag].desc
@@ -378,7 +491,7 @@
                     document.querySelectorAll(".parallax-text-block .grid-container p")[i * 2].innerText = desc
                     document.querySelectorAll(".parallax-text-block .grid-container p")[i * 2 + 1].innerText = desc
                 }
-                
+
             }
 
 
@@ -420,19 +533,20 @@
 
 
             function carousel() {
-                if (!scrolling) {
+                if (!scrolling && window.innerWidth > 599) {
 
                     var carousel_wrap = document.getElementsByClassName("carousel-wrap")[0]
                     carousel_wrap.style.width = window.outerWidth + "px"
                     var carousels = document.querySelectorAll(".carousel");
 
                     // generate carousels responsively
-                    if (carousels[carousels.length - 1].getBoundingClientRect().right < window.outerWidth) {
+                    if (carousels[carousels.length - 1].getBoundingClientRect().right < window.innerWidth) {
                         clone = carousels[0].cloneNode(true);
 
                         //clone.style.left = carousels[carousels.length - 1].getBoundingClientRect().right + "px";
-                        clone.style.transition = "none";
+                        
                         clone.style.left = carousels[carousels.length - 1].getBoundingClientRect().right + "px";
+                        clone.style.transition = "none";
                         clone.style.right = "auto";
                         carousels[carousels.length - 1].parentNode.appendChild(clone);
                         clone.style.transition = carousel_period + "s all linear";
@@ -451,11 +565,9 @@
                     for (i = 0; i < carousels.length - 1; i++) {
                         if (carousels[i].getBoundingClientRect().right > carousels[i + 1].getBoundingClientRect().left) {
                             var carousel = carousels[i]
-                            
 
                             carousel.style.left = (carousels[i + 1].getBoundingClientRect().left - carousels[i + 1].getBoundingClientRect().width - 10) + "px";
                             carousel.style.transition = "none";
-                            console.log(carousel.getBoundingClientRect().right)
                             carousel.style.right = "auto";
                             carousel.style.transition = carousel_period + "s all linear";
                             carousel.style.left = (carousels[i + 1].getBoundingClientRect().left - 11 - 2 * carousels[i + 1].getBoundingClientRect().width) + "px";
@@ -479,6 +591,7 @@
 
                 scrolling = false;
             }
+
 
             // frame animation
             function reveal() {
@@ -541,6 +654,7 @@
             }
 
             function animateCallback() {
+                flickViewport()
                 background()
                 reveal()
                 carousel()
@@ -575,5 +689,5 @@
                 box.style.boxShadow = shadow;
             }
         </script>
-    
-</body></html>
+    </body>
+</html>
