@@ -375,10 +375,27 @@
             function mobileOnly() {
                 if (window.innerWidth < 599) {
                     mobileParallaxTextBackgrounds()
+                    
                     //hideAddressBar()
-                    //document.getElementsByClassName("container")[0].addEventListener("scroll", function () {
-                    //    window.scrollTo(0, 1)
-                    //});
+                    document.getElementsByClassName("container")[0].addEventListener("scroll", function () {
+                        if (window.innerWidth < 599) {
+                            if (!document.fullscreenElement) {
+                                document.body.requestFullscreen();
+                            }
+                        } else {
+                            try {
+                                document.exitFullscreen()
+                            } catch (e) {
+                                cancelFullscreen();
+                            }
+                        }
+                    });
+                } else {
+
+                    para_texts = document.querySelectorAll(".grid-container .parallax-text")
+                    for (i = 0; i < para_texts.length; i += 3) {
+                        para_texts[i].style.background = "none";
+                    }
                 }
             }
 
@@ -391,6 +408,7 @@
                 var flickityVports = document.querySelectorAll(".flickity-viewport")
                 for (i = 0; i < flickityVports.length; i++) {
                     flickityVports[i].style.height = "100%"
+                    flickityVports[i].style.transition = "0.5s ease all"
                 }
             }
             flickViewport()
