@@ -842,7 +842,7 @@ h1.link {
 		height: 4pt;
 		width: 56pt
 	}
-	.container {
+	body .container {
 		position: fixed;
 		inset: 0;
 		height: 100%;
