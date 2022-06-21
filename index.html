@@ -376,6 +376,9 @@
                 if (window.innerWidth < 599) {
                     mobileParallaxTextBackgrounds()
                     hideAddressBar()
+                    document.getElementsByClassName("container")[0].addEventListener("scroll", function () {
+                        window.scrollTo(0, 120)
+                    });
                 }
             }
 
