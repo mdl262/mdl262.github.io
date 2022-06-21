@@ -359,16 +359,28 @@
         <script>
 
             // mobile only
+
             function mobileParallaxTextBackgrounds() {
-                if (window.innerWidth < 599) {
-                    para_texts = document.querySelectorAll(".grid-container .parallax-text")
-                    for (i = 0; i < para_texts.length; i += 3) {
-                        para_texts[i].style.background = "#171717"
-                    }
+                para_texts = document.querySelectorAll(".grid-container .parallax-text")
+                for (i = 0; i < para_texts.length; i += 3) {
+                    para_texts[i].style.background = "#171717"
                 }
             }
-            mobileParallaxTextBackgrounds()
-            window.addEventListener('resize', mobileParallaxTextBackgrounds);
+
+            function hideAddressBar() {
+                window.scrollTo(0, 1)
+                document.getElementsByClassName("container")[0].style.height = window.innerHeight + "px"
+            }
+
+            function mobileOnly() {
+                if (window.innerWidth < 599) {
+                    mobileParallaxTextBackgrounds()
+                    hideAddressBar()
+                }
+            }
+
+            mobileOnly()
+            window.addEventListener('resize', mobileOnly);
 
 
             // fix flickity viewports
