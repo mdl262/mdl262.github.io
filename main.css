@@ -55,7 +55,7 @@ body {
 			color: white;
 			display: flex;
 			width: 100%;
-			height: 100vh;
+			height: 100%;
 			scroll-snap-align: start;
 			overflow: hidden;
 			justify-content: center;
@@ -711,7 +711,7 @@ h1.link {
 	}
 
 	.frame.active:nth-of-type(5) {
-		inset: 85% 0 0 0;
+		inset: 90% 0 0 0;
 	}
 
 	.frame p {
@@ -722,7 +722,7 @@ h1.link {
 
 	.card {
 		width: 100%;
-		height: 80vh;
+		height: 100%;
 		grid-template: 20% 20% 20% 40% / 1fr 1fr ;
 		min-height: 50pt;
 		min-width: 80pt;
@@ -733,7 +733,7 @@ h1.link {
 			grid-area: 4 / 1 / 4 / 3;
 			padding: 8pt 0 0 0;
 			overflow: clip;
-			height: calc(100% - 8pt)
+			height: -webkit-fit-content;
 		}
 
 		.card h1 {
