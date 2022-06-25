@@ -129,6 +129,9 @@ body {
 		background-color: #161616;
 	}
 
+	.grid-container > a {
+		visibility: hidden;
+	}
 
 .grid-item {
 	outline: auto;
