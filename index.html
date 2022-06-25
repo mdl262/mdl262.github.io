@@ -383,21 +383,16 @@
                 for (i = 0; i < sections.length; i++) {
                     if (sections[i].getBoundingClientRect().top == scrollY) {
                         return
-                        console.log("matched")
                     }
                 }
 
                 for (i = 0; i < sections.length - 1; i++) {
                     if (sections[i].getBoundingClientRect().top > -sectionHeight/2) {
-                        console.log(sections[i].getBoundingClientRect().top + sectionHeight / 2)
-                        console.log(scrollY)
                         sections[i].scrollIntoView()
                         return;
-                        console.log("scrolled")
                     }
                 }
                 sections[sections.length - 1].scrollIntoView()
-                console.log("last")
             }
 
             sl = null;
