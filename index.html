@@ -28,27 +28,28 @@
 
         <div id="mobile-alert" style="display:none;">
             <div onclick="this.parentNode.style.visibility='hidden'">𐌢</div>
-            <!--<div class="main-carousel flickity-enabled is-draggable" data-flickity="" tabindex="0" style="position:absolute; inset:0">
-                <div class="carousel-cell" style="width:100px">1</div>
-                <div class="carousel-cell" style="width:100px">2</div>
-                <div class="carousel-cell" style="width:100px">3</div>
-                <div class="carousel-cell" style="width:100px">4</div>
-                <div class="carousel-cell" style="width:100px">5</div>
-            </div>-->
             <p>Hello! I'm currently working on making this website mobile-friendly. Please view <u>max-dan-li.com</u> on your computer! </p>
         </div>
 
-        <div class="frame"></div>
-        <div class="frame"></div>
-        <div class="frame"></div>
-        <div class="frame" id="frame-bottom" style=" display: flex; justify-content: flex-end; align-items: center; padding-left: 2.5%; padding-right: 2.5%; ">
-            <p style="font-style: italic; transition-delay: 0s; opacity: 0;"></p>
+        <div id="shadowbox">
+            <div onclick="this.parentNode.style.transform='translateX(100%)'">ᐸ</div>
+            <div></div>
         </div>
+
+        <div id="frames">
+            <div class="frame"></div>
+            <div class="frame"></div>
+            <div class="frame"></div>
+            <div class="frame" id="frame-bottom">
+                <p style="font-style: italic; transition-delay: 0s; opacity: 0;"></p>
+            </div>
+        </div>
+
 
         <div class="gradient-background" style="background-image: radial-gradient(circle at -17.8079% -1.26409%, rgb(100, 23, 179) 0px, transparent 47%), radial-gradient(circle at -22.9935% 137.692%, rgb(25, 76, 189) 0px, transparent 52%), radial-gradient(circle at 24.8459% 122.631%, rgb(30, 37, 166) 0px, transparent 42%), radial-gradient(circle at 129.845% -10.3899%, rgb(159, 16, 201) 0px, transparent 52%), radial-gradient(circle at 72.9399% -19.3323%, rgb(61, 25, 189) 0px, transparent 41%), radial-gradient(circle at -47.1117% 97.5582%, rgb(115, 73, 252) 0px, transparent 47%), radial-gradient(circle at 103.695% -18.1481%, rgb(23, 113, 179) 0px, transparent 40%), radial-gradient(circle at 63.1943% 7.90653%, rgb(16, 173, 201) 0px, transparent 52%);"></div>
         <div class="container">
 
-            <section id="hero" style="position:relative">
+            <section class="section" id="hero" style="position:relative">
                 <div class="grid-container">
                     <img src="./silhouette.png" class="hero-image">
                     <div class="hero-title-block">
@@ -62,11 +63,11 @@
 
             </section>
 
-            <section style="visibility: hidden; margin-left: 1%; position: absolute; height: 100vh; width: 0; top: 0;"></section>
-            <section style="visibility: hidden; margin-left: 1%; position: absolute; height: 100vh; width: 0; top: 100vh;"></section>
-            <section style="visibility: hidden; margin-left: 1%; position: absolute; height: 100vh; width: 0; top: 200vh;"></section>
-            <section style="visibility: hidden; margin-left: 1%; position: absolute; height: 100vh; width: 0; top: 300vh;"></section>
-            <section style="visibility: hidden; margin-left: 1%; position: absolute; height: 100vh; width: 0; top: 400vh;"></section>
+            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 0;"></section>
+            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 100%;"></section>
+            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 200%;"></section>
+            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 300%;"></section>
+            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 400%;"></section>
 
 
             <!--Carousel-->
@@ -74,7 +75,7 @@
 
 
 
-            <div id="projects" class="parallax-text-block">
+            <section id="projects" class="parallax-text-block">
 
 
                 <div class="main-carousel" data-flickity='{"cellAlign":"center","contain":true, "wrapAround": true, "autoPlay": true, "draggable": true}'>
@@ -213,33 +214,34 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 200vh;">
+            <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 200%;">
                 <div class="grid-container" style="align-items: start;">
                     <div id="img1" class="box-shadow odd">
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);top: 200vh;">
+            <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);top: 200%;">
                 <div class="grid-container" style="align-items: start;">
                     <div class="parallax-text odd">
                         <div id="para1">
                             <h1 class="parallax" style="visibility:hidden">iPhone Technical Operations</h1>
-                            <p>My 6 months at Apple were entirely virtual. Working on the mass production-end of Apple's optics and camera business allowed me to collaborate intensely with teams in machine learning, data services, and on-site management. As an independent project owner &amp; DRI, I showcased my ability to learn from across the disciplines to simplify cavity-level analytics, develop new Python packages for 40x faster actionable data. As someone with a public speaking background, I embraced the Apple culture of strong presenters to deliver concise and effective technical keynotes to Senior Directors, receiving glowing praise.</p>
+                            <p onclick="loadShadowBox(this.innerText)">My 6 months at Apple were entirely virtual. Working on the mass production-end of Apple's optics and camera business allowed me to collaborate intensely with teams in machine learning, data services, and on-site management. As an independent project owner &amp; DRI, I showcased my ability to learn from across the disciplines to simplify cavity-level analytics, develop new Python packages for 40x faster actionable data. As someone with a public speaking background, I embraced the Apple culture of strong presenters to deliver concise and effective technical keynotes to Senior Directors, receiving glowing praise.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 200vh;">
+            <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 200%;">
                 <div class="grid-container" style="align-items: start;">
                     <div class="parallax-text odd">
                         <h1 class="parallax">iPhone Technical Operations</h1>
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 200vh; pointer-events: none;">
+            <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 200%; pointer-events: none;">
                 <div class="grid-container" style="align-items: start; pointer-events: none;">
+                    <a class="gradient-btn" href="/resume.pdf">my cv</a>
                     <div class="parallax-text odd">
                         <div id="para1" style="pointer-events: none;">
                             <h1 class="parallax" style="visibility:hidden">iPhone Technical Operations</h1>
@@ -256,30 +258,31 @@
 
 
 
-            <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 300vh; ">
+            <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 300%; ">
                 <div class="grid-container" style="align-items: start;">
                     <div class="box-shadow even"></div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);  top: 300vh;">
+            <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);  top: 300%;">
                 <div class="grid-container" style="align-items: start;">
                     <div class="parallax-text even">
                         <div id="para1">
                             <h1 class="parallax" style="visibility:hidden">Engineering &amp; Business Development</h1>
-                            <p>BlueSpace.ai is an autonomous driving company in Series B. Working at an autonomous driving software startup gave me the valuable opportunity to wear many hats and work closely with the C-level management that includes a Forbes 30-under-30 CEO. My work covered engineering design of product prototypes, competitive analysis, web design/programming, and brand management. My critical contributions in design and implementation of mission-critical investor and partner materials culminated in BlueSpace's naming as a 2021 NASA iTech Cycle I winner.</p>
+                            <p onclick="loadShadowBox(this.innerText)">BlueSpace.ai is an autonomous driving company in Series B. Working at an autonomous driving software startup gave me the valuable opportunity to wear many hats and work closely with the C-level management that includes a Forbes 30-under-30 CEO. My work covered engineering design of product prototypes, competitive analysis, web design/programming, and brand management. My critical contributions in design and implementation of mission-critical investor and partner materials culminated in BlueSpace's naming as a 2021 NASA iTech Cycle I winner.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 300vh; ">
+            <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 300%; ">
                 <div class="grid-container" style="align-items: start;">
                     <div class="parallax-text even">
                         <h1 class="parallax">Engineering &amp; Business Development</h1>
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 300vh; pointer-events: none;">
+            <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 300%; pointer-events: none;">
                 <div class="grid-container" style="align-items: start; pointer-events: none;">
+                    <a class="gradient-btn" href="/resume.pdf">my cv</a>
                     <div class="parallax-text even">
                         <div id="para1" style="pointer-events:none;">
                             <h1 class="parallax" style="visibility:hidden">Engineering &amp; Business Development</h1>
@@ -295,31 +298,32 @@
             </div>
 
 
-            <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);  top: 400vh;">
+            <div class="parallax-text-block" style="transform: scale(.9) translateZ(10px);  top: 400%;">
                 <div class="grid-container" style="align-items: start;">
                     <div class="parallax-text odd">
                         <div id="para1">
                             <h1 class="parallax" style="visibility:hidden">Product &amp; Brand Management Consultant</h1>
-                            <p>Listener Pro is a Shenzhen consumer electronics company, specializing in audio devices. Working with the China team across timezones, I led the full overhaul of the company's online salesfront. On top of advising C-level executives in project management and business strategy, and preparing bilingual project reports and proposals, my work in web development and analytics boosted business inquiries 30-fold over the course of 4 months.</p>
+                            <p onclick="loadShadowBox(this.innerText)">Listener Pro is a Shenzhen consumer electronics company, specializing in audio devices. Working with the China team across timezones, I led the full overhaul of the company's online salesfront. On top of advising C-level executives in project management and business strategy, and preparing bilingual project reports and proposals, my work in web development and analytics boosted business inquiries 30-fold over the course of 4 months.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 400vh; ">
+            <div class="parallax-text-block" style="transform: scale(.84) translateZ(16px); top: 400%; ">
                 <div class="grid-container" style="align-items: start;">
                     <div class="box-shadow odd" style=" ">
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 400vh; ">
+            <div class="parallax-text-block" style="transform: scale(.78) translateZ(22px); top: 400%; ">
                 <div class="grid-container" style="align-items: start;">
                     <div class="parallax-text odd">
                         <h1 class="parallax">Product &amp; Brand Management Consultant</h1>
                     </div>
                 </div>
             </div>
-            <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 400vh; pointer-events: none;">
+            <div class="parallax-text-block" style="transform: scale(.88) translateZ(12px); top: 400%; pointer-events: none;">
                 <div class="grid-container" style="align-items: start; pointer-events: none;">
+                    <a class="gradient-btn" href="/resume.pdf">my cv</a>
                     <div class="parallax-text odd">
                         <div id="para1" style="pointer-events: none;">
                             <h1 class="parallax" style="visibility:hidden">Product &amp; Brand Management Consultant</h1>
@@ -334,8 +338,8 @@
                 </div>
             </div>
 
-            <!--<div class="parallax-wrap" style="perspective: 100px;  height:400vh; position: relative; overflow-x: clip;"></div>-->
-            <section id="contact" style="background-attachment: fixed; margin-top: 400vh;">
+            <!--<div class="parallax-wrap" style="perspective: 100px;  height:400%; position: relative; overflow-x: clip;"></div>-->
+            <section id="contact" class="section">
                 <div class="grid-container">
                     <div style="grid-column: 2 / 7; grid-row: 2/5; justify-content:right; align-items:center">
                         <div>
@@ -354,7 +358,60 @@
             </section>
         </div>
 
+        <script src="./scripts/scroll.js"></script>
         <script>
+
+            function loadShadowBox(content) {
+                document.querySelectorAll("#shadowbox div")[1].innerText = content;
+                document.querySelectorAll("#shadowbox")[0].style.transform = "translateX(0)";
+            }
+
+
+            function x() {
+                var x = document.getElementById("projects").getBoundingClientRect().height
+                var y = window.innerHeight
+                alert(String(x) + "  " + String(y))
+            }
+            /*document.body.addEventListener("click", x)*/
+
+            function scrollToNearest() {
+                var sections = document.querySelectorAll("section")
+                var sectionHeight = sections[0].getBoundingClientRect().height;
+
+                for (i = 0; i < sections.length; i++) {
+                    if (sections[i].getBoundingClientRect().top == scrollY) {
+                        return
+                        console.log("matched")
+                    }
+                }
+
+                for (i = 0; i < sections.length - 1; i++) {
+                    if (sections[i].getBoundingClientRect().top > -sectionHeight/2) {
+                        console.log(sections[i].getBoundingClientRect().top + sectionHeight / 2)
+                        console.log(scrollY)
+                        sections[i].scrollIntoView()
+                        return;
+                        console.log("scrolled")
+                    }
+                }
+                sections[sections.length - 1].scrollIntoView()
+                console.log("last")
+            }
+
+            sl = null;
+            function enableForceScrollNearest(a = true) {
+                if (a && sl == null) {
+                    sl = new Scroll(100, ".container");
+                    sl.addEventListener("end", scrollToNearest);
+                } else if (!a && sl != null) {
+                    sl.removeEventListener("end", scrollToNearest)
+                    sl = null;
+                }
+            }
+
+            window.onload = function() {
+                enableForceScrollNearest(window.innerWidth < 599)
+            }
 
             // mobile only
 
@@ -372,21 +429,18 @@
 
             function mobileOnly() {
                 mobileParallaxTextBackgrounds(window.innerWidth < 599);
+                enableForceScrollNearest(window.innerWidth < 599)
+            }
+
+            function fixHeights() {
+                if (window.innerWidth > 599 && Math.abs(window.innerHeight - document.getElementById("hero").getBoundingClientRect().height) > 1) {
+                    window.scrollTo(0, 1)
+                }
             }
 
             mobileOnly()
             window.addEventListener('resize', mobileOnly);
 
-
-            // fix flickity viewports
-            function flickViewport() {
-                var flickityVports = document.querySelectorAll(".flickity-viewport")
-                for (i = 0; i < flickityVports.length; i++) {
-                    flickityVports[i].style.height = "100%"
-                    flickityVports[i].style.transition = "0.5s ease all"
-                }
-            }
-            flickViewport()
 
             // load content
             url = window.location.href
@@ -504,6 +558,19 @@
 
 
             // carousel animation
+            function carouselJumpstart() {
+                carousels = document.querySelectorAll(".carousel");
+                for (i = 0; i < carousels.length; i++) {
+                    var carousel = carousels[i]
+
+                    carousel.style.left = (carousels[i].getBoundingClientRect().left - carousels[i].getBoundingClientRect().width - 10) + "px";
+                    carousel.style.transition = "none";
+                    carousel.style.right = "auto";
+                    carousel.style.transition = carousel_period + "s all linear";
+                    carousel.style.left = (carousels[i].getBoundingClientRect().left - 11 - 2 * carousels[i].getBoundingClientRect().width) + "px";
+                }
+            }
+
             if (window.innerWidth > 599) {
                 var scrolling = false;
                 var carousel_period = 80
@@ -662,7 +729,6 @@
             }
 
             function animateCallback() {
-                flickViewport()
                 background()
                 reveal()
                 carousel()
@@ -673,8 +739,6 @@
 
 
             // END OF gradient background animation
-
-
 
 
             function hex(number) {

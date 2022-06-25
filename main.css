@@ -1,4 +1,48 @@
+/* Shadowbox */
+#shadowbox {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 1000000;
+	inset: 0px;
+	visibility: hidden;
+	transform: translateX(100%)
+}
+
+@media (max-width: 599px) {
+	#shadowbox {
+		visibility: visible;
+		background-color: #171717;
+		background-image: linear-gradient(to right, #4B2ED7, #2855F7);
+		background-size: 100% calc(40pt + env(safe-area-inset-top));
+		background-repeat: no-repeat;
+		transition: 0.3s ease-out transform;
+	}
+
+
+
+		#shadowbox div:nth-child(1) {
+			font-size: 15pt;
+			padding: calc(10pt + env(safe-area-inset-top)) 10pt 10pt 10pt;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+
+
+		#shadowbox div:nth-child(2) {
+			font-size: 11pt;
+			line-height: 20pt;
+			padding: calc(60pt + env(safe-area-inset-top)) 20pt 20pt 20pt;
+			position: absolute;
+			overflow-y: scroll;
+			inset: 0;
+		}
+}
+
 /* Mobile Popup */
+
 #mobile-alert {
 	visibility: hidden;
 	position: absolute;
@@ -48,16 +92,17 @@ body {
 		transform-style:preserve-3d;
 		overflow-y: scroll;
 		overflow-x: clip;
-		transition-delay: 1s;
 	}
 
-		body .container section {
+	body section {
+		width: 100%;
+		height: 100%;
+		scroll-snap-align: start;
+		overflow: hidden;
+	}
+		body .container .section {
 			color: white;
 			display: flex;
-			width: 100%;
-			height: 100%;
-			scroll-snap-align: start;
-			overflow: hidden;
 			justify-content: center;
 			align-items: center;
 			background-color: #171717;
@@ -131,7 +176,7 @@ h1.parallax {
 
 #projects.parallax-text-block {
 	transform: scale(.9) translateZ(10px);
-	top: 100vh;
+	top: 100%;
 	display: flex;
 	justify-content: center;
 }
@@ -235,6 +280,15 @@ h1.parallax {
 }
 
 /* Carousel section */
+#frame-bottom {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-left: 2.5%; 
+	padding-left: calc(env(safe-area-inset-left) + 2.5%);
+	padding-right: 2.5%;
+	padding-right: calc(env(safe-area-inset-right) + 2.5%);
+}
 
 .gradient-background {
 	z-index: -3;
@@ -254,6 +308,7 @@ h1.parallax {
 
 .main-carousel {
 	visibility: hidden;
+	display: none;
 }
 
 .carousel {
@@ -339,35 +394,35 @@ h1.parallax {
 	transition: 1s all ease-out;
 	overflow: clip;
 }
-	.frame:nth-of-type(2) {
+	#frames .frame:nth-child(1) {
 		inset: 0 100% 0 0;
 	}
 
-	.frame.active:nth-of-type(2) {
+	#frames .frame.active:nth-child(1) {
 		inset: 0 95% 0 0;
 	}
 
-	.frame:nth-of-type(3) {
+	#frames .frame:nth-child(2) {
 		inset: 0 0 100% 0;
 	}
 
-	.frame.active:nth-of-type(3) {
+	#frames .frame.active:nth-child(2) {
 		inset: 0 0 90% 0;
 	}
 
-	.frame:nth-of-type(4) {
+	#frames .frame:nth-child(3) {
 		inset: 0 0 0 100%;
 	}
 
-	.frame.active:nth-of-type(4) {
+	#frames .frame.active:nth-child(3) {
 		inset: 0 0 0 95%;
 	}
 
-	.frame:nth-of-type(5) {
+	#frames .frame:nth-child(4) {
 		inset: 100% 0 0 0;
 	}
 
-	.frame.active:nth-of-type(5) {
+	#frames .frame.active:nth-child(4) {
 		inset: 90% 0 0 0;
 	}
 
@@ -445,6 +500,10 @@ h1.parallax {
 		background: white;
 	}*/
 
+.flickity-viewport {
+	height: 100% !important;
+}
+
 .flickity-button:disabled {
 	display: none;
 }
@@ -454,8 +513,15 @@ h1.parallax {
 }
 
 .flickity-button {
-	background: transparent;
+	background: transparent !important;
+	color: white !important;
 }
+	.flickity-prev-next-button.next {
+		right: 0 !important;
+	}
+	.flickity-prev-next-button.previous {
+		left: 0 !important;
+	}
 
 #projects .flickity-page-dots {
 	bottom: -15pt;
@@ -477,6 +543,13 @@ h1.parallax {
 	color: white;
 }
 
+/* Contact */
+#contact {
+	background-attachment: fixed;
+	height: 100%;
+	position: absolute;
+	top: 500%;
+}
 
 /* UI Elements */
 
@@ -620,6 +693,11 @@ h1.link {
 
 /*for phone only*/
 @media (max-width: 599px) {
+
+	body .container {
+		/*scroll-snap-type: y proximity;*/
+	}
+
 	/*Hero section*/
 	#hero .grid-container {
 		display: flex;
@@ -679,13 +757,25 @@ h1.link {
 			grid-area: 1 / 1 / 1 / 3;
 		}
 
+	.grid-container > a {
+		text-decoration: none;
+		visibility: visible !important;
+		height: 10pt;
+		font-size: 10pt;
+		margin-left: auto;
+		margin-right: 18pt;
+		margin-top: -9pt;
+		grid-area: 2 / 2 / 2 / 2;
+	}
+
 	.parallax-text {
+		height: 100%;
 		height: -webkit-fill-available;
 		pointer-events: none;
 	}
 		.parallax-text.odd, .parallax-text.even {
 			grid-area: 2 / 1 / 2 / 3;
-			padding: 50pt 40pt 20pt 40pt;
+			padding: 30pt 40pt 20pt 40pt;
 		}
 
 	/*Frames*/
@@ -693,29 +783,26 @@ h1.link {
 		position: fixed;
 	}
 
-	.frame p {
-		font-size: 10pt;
-		line-height: 11pt;
-	}
+		.frame p {
+			font-size: 10pt;
+			line-height: 11pt;
+			margin-top: auto;
+		}
 
-	.frame.active:nth-of-type(2) {
+	#frames .frame.active:nth-child(1) {
 		inset: 0 100% 0 0;
 	}
 
-	.frame.active:nth-of-type(3) {
+	#frames .frame.active:nth-child(2) {
 		inset: 0 0 95% 0;
 	}
 
-	.frame.active:nth-of-type(4) {
+	#frames .frame.active:nth-child(3) {
 		inset: 0 0 0 100%;
 	}
 
-	.frame.active:nth-of-type(5) {
+	#frames .frame.active:nth-child(4) {
 		inset: 90% 0 0 0;
-	}
-
-	.frame p {
-		margin-top: auto;
 	}
 
 	/*Carousel section*/
@@ -731,21 +818,27 @@ h1.link {
 
 		.card .carousel-text-wrapper {
 			grid-area: 4 / 1 / 4 / 3;
-			padding: 8pt 0 0 0;
-			overflow: clip;
-			height: -webkit-fit-content;
+			padding: 0;
+			overflow-y: scroll;
+			height: 100%;
+			/*height: -webkit-fit-content;*/
 		}
 
 		.card h1 {
 			font-size: 17pt;
 			line-height: 19pt;
+			padding-top: 8pt;
 		}
 
 		.card p {
-			font-size: 15pt;
+			font-size: 13pt;
 			line-height: 17pt;
-			overflow-y: scroll;
 		}
+
+	.parallax-text-block {
+		height: 100% !important;
+		position: fixed;
+	}
 
 	.parallax-text-block .grid-container {
 		height: 100%;
@@ -757,7 +850,8 @@ h1.link {
 	}
 
 		.grid-container .parallax-text div {
-			height: -webkit-fill-available;
+			height: 100%;
+			/*height: -webkit-fill-available;*/
 			pointer-events: none;
 			display: flex;
 			flex-direction: column;
@@ -772,10 +866,29 @@ h1.link {
 			font-size: 13pt;
 			line-height: 20pt;
 			text-align: left;
-			height: -webkit-fill-available;
-			overflow-y: scroll;
+			height: 100%;
+			/*height: -webkit-fill-available;*/
+			overflow-y: hidden;
 			pointer-events: all;
+			position: relative;
 		}
+
+			.grid-container p::after {
+				content: "See more";
+				background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), #171717 90%); 
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+				height: 40pt;
+				display: inline-flex;
+				align-items: flex-end;
+				justify-content: flex-end;
+				font-size: 10pt;
+				font-weight: bold;
+				right: 0;
+				text-shadow: 0 0 20px #171717;
+			}
+
 
 	h1.parallax {
 		background-image: linear-gradient(to right, #4B2ED7, #2855F7);
@@ -826,18 +939,24 @@ h1.link {
 
 	.carousel-wrap {
 		visibility: hidden;
+		display: none;
 	}
 
 	#projects.parallax-text-block {
-		display: unset;
+		display: flex;
+		align-items: center;
 		pointer-events: all;
 		transform: none;
+		height: 100%;
 	}
 
 	.main-carousel {
-		top: 10%;
 		height: 75%;
 		visibility: visible;
+		display: unset;
+		position: relative !important;
+		margin-top: -10%;
+		width: 100%;
 	}
 
 	.carousel-text-wrapper > div {
@@ -853,6 +972,14 @@ h1.link {
 
 	body {
 		height:100%;
+	}
+
+	* {
+		transition: height .2s ease;
+	}
+
+	#hero {
+		position: static !important;
 	}
 }
 
