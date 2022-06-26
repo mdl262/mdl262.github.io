@@ -75,7 +75,7 @@
 
 body {
 	color: white;
-	font-family: Montserrat;
+	font-family: Montserrat, sans-serif;
 	width: 100%;
 	height: 100vh;
 	margin: 0;
@@ -84,6 +84,7 @@ body {
 
 	body .container {
 		width: 100%;
+		width: 100vw !important;
 		height: 100%;
 		scroll-snap-type: y mandatory;
 		scroll-behavior: smooth;
@@ -91,7 +92,7 @@ body {
 		perspective: 100px;
 		transform-style:preserve-3d;
 		overflow-y: scroll;
-		overflow-x: clip;
+		overflow-x: hidden;
 	}
 
 	body section {
@@ -106,7 +107,6 @@ body {
 			justify-content: center;
 			align-items: center;
 			background-color: #171717;
-			background-position: 0vw 0 / 100vw 40vh;
 			background-repeat: no-repeat;
 			background-image: radial-gradient(farthest-side at 50% -2%, #2855F470, transparent);
 		}
@@ -175,6 +175,7 @@ h1.parallax {
 	position: absolute;
 	height: 100vh;
 	width: 100vw;
+	overflow: hidden;
 }
 
 #projects.parallax-text-block {
@@ -697,6 +698,10 @@ h1.link {
 /*for phone only*/
 @media (max-width: 599px) {
 
+	body {
+		position:fixed;
+	}
+
 	body .container {
 		/*scroll-snap-type: y proximity;*/
 	}
@@ -708,7 +713,6 @@ h1.link {
 	}
 
 	#hero img {
-		position: absolute;
 		inset: 0;
 		-webkit-mask-image: -webkit-linear-gradient(bottom, transparent 0%, #00000078 34%, black 60%);
 	}
@@ -772,8 +776,9 @@ h1.link {
 	}
 
 	.parallax-text {
-		height: 100%;
+		max-height: calc(100% - 50pt);
 		height: -webkit-fill-available;
+		height: -moz-fill-available;
 		pointer-events: none;
 	}
 		.parallax-text.odd, .parallax-text.even {
@@ -840,7 +845,7 @@ h1.link {
 
 	.parallax-text-block {
 		height: 100% !important;
-		position: fixed;
+		position: absolute;
 	}
 
 	.parallax-text-block .grid-container {
@@ -853,8 +858,9 @@ h1.link {
 	}
 
 		.grid-container .parallax-text div {
-			height: 100%;
-			/*height: -webkit-fill-available;*/
+			max-height: 100%;
+			height: -webkit-fill-available;
+			height: -moz-fill-available;
 			pointer-events: none;
 			display: flex;
 			flex-direction: column;
@@ -869,14 +875,14 @@ h1.link {
 			font-size: 13pt;
 			line-height: 20pt;
 			text-align: left;
-			height: 100%;
-			/*height: -webkit-fill-available;*/
+			max-height: 100%;
+			height: -webkit-fill-available;
 			overflow-y: hidden;
 			pointer-events: all;
 			position: relative;
 		}
 
-			.grid-container p::after {
+			.parallax-text-block .grid-container p::after {
 				content: "See more";
 				background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), #171717 90%); 
 				width: 100%;
@@ -890,6 +896,11 @@ h1.link {
 				font-weight: bold;
 				right: 0;
 				text-shadow: 0 0 20px #171717;
+			}
+
+			#contact .grid-container .p::after {
+				content: none !important;
+				background: none !important;
 			}
 
 
@@ -968,8 +979,7 @@ h1.link {
 		width: 56pt
 	}
 	body .container {
-		position: fixed;
-		inset: 0;
+		position: relative;
 		height: 100%;
 	}
 

@@ -24,11 +24,13 @@
     <!--import flickity for mobile carousels-->
     <link rel="stylesheet" href="./scripts/flickity.css" media="screen">
     <script src="./scripts/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:wght@200;400;800">
 </head>
 
     <body>
 
-        <div id="mobile-alert" style="display:none;">
+        <div id="mobile-alert" style="display:none; inset:0;height:100%; width:100%">
             <div onclick="this.parentNode.style.visibility='hidden'">𐌢</div>
             <p>Hello! I'm currently working on making this website mobile-friendly. Please view <u>max-dan-li.com</u> on your computer! </p>
         </div>
@@ -51,25 +53,24 @@
         <div class="gradient-background" style="background-image: radial-gradient(circle at -17.8079% -1.26409%, rgb(100, 23, 179) 0px, transparent 47%), radial-gradient(circle at -22.9935% 137.692%, rgb(25, 76, 189) 0px, transparent 52%), radial-gradient(circle at 24.8459% 122.631%, rgb(30, 37, 166) 0px, transparent 42%), radial-gradient(circle at 129.845% -10.3899%, rgb(159, 16, 201) 0px, transparent 52%), radial-gradient(circle at 72.9399% -19.3323%, rgb(61, 25, 189) 0px, transparent 41%), radial-gradient(circle at -47.1117% 97.5582%, rgb(115, 73, 252) 0px, transparent 47%), radial-gradient(circle at 103.695% -18.1481%, rgb(23, 113, 179) 0px, transparent 40%), radial-gradient(circle at 63.1943% 7.90653%, rgb(16, 173, 201) 0px, transparent 52%);"></div>
         <div class="container">
 
-            <section class="section" id="hero" style="position:relative">
-                <div class="grid-container">
-                    <img src="./silhouette.png" class="hero-image">
-                    <div class="hero-title-block">
-                        <h2>Mechanical engineering.<br>Data science. Design.</h2>
-                        <h1>Max Li</h1>
-                        <a class="outline-btn" style="text-decoration:none" href="resume.pdf">see cv</a>
-                        <a class="gradient-btn" style="padding-right: 12px; text-decoration: none;" href="#projects">see work ↓</a>
-                    </div>
-
+        <section class="section" id="hero" style="position:relative">
+            <div class="grid-container" style="overflow:hidden;">
+                <img src="./silhouette.png" class="hero-image">
+                <div class="hero-title-block">
+                    <h2>Mechanical engineering.<br>Data science. Design.</h2>
+                    <h1>Max Li</h1>
+                    <a class="outline-btn" style="text-decoration:none" href="resume.pdf">see cv</a>
+                    <a class="gradient-btn" style="padding-right: 12px; text-decoration: none;" href="#projects">see work ↓</a>
                 </div>
 
-            </section>
+            </div>
 
-            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 0;"></section>
-            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 100%;"></section>
-            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 200%;"></section>
-            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 300%;"></section>
-            <section style="visibility: hidden; margin-left: 0; position: absolute; height: 100%; width: 0; top: 400%;"></section>
+        </section>
+
+        <section style="visibility: hidden; position: absolute; height: 100%; width: 1px; top: 100%; left: 0; "></section>
+        <section style="visibility: hidden; position: absolute; height: 100%; width: 1px; top: 200%; left: 0;"></section>
+        <section style="visibility: hidden; position: absolute; height: 100%; width: 1px; top: 300%; left: 0;"></section>
+        <section style="visibility: hidden; position: absolute; height: 100%; width: 1px; top: 400%; left: 0;"></section>
 
 
             <!--Carousel-->
@@ -77,7 +78,7 @@
 
 
 
-            <section id="projects" class="parallax-text-block">
+            <section id="projects" class="parallax-text-block" style="">
 
 
                 <div class="main-carousel" data-flickity='{"cellAlign":"center","contain":true, "wrapAround": true, "autoPlay": true, "draggable": true}'>
@@ -370,8 +371,9 @@
 
 
             function x() {
-                var x = document.getElementById("projects").getBoundingClientRect().height
-                var y = window.innerHeight
+                var x = document.getElementById("projects").getBoundingClientRect().top
+                var y = document.getElementsByClassName("container")[0].scrollTop
+                console.log(document.getElementById("projects").getBoundingClientRect())
                 alert(String(x) + "  " + String(y))
             }
             /*document.body.addEventListener("click", x)*/
